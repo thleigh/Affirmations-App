@@ -30,7 +30,7 @@ router.post('/register', (req, res) => {
                 password: req.body.password
             });
             // salt and hash the password, then save the user
-            bcrypt.getSalt(10, (error, salt) => {
+            bcrypt.genSalt(10, (error, salt) => {
                 bcrypt.hash(newUser.password, salt, (error, hash) => {
                     if(error) throw error;
                     // Change the password to the hash
