@@ -1,6 +1,6 @@
 # Affirmations
 
-Affirmations is an app created by Margaret Huang, Steven Michaud, and Tanner Leigh through React and MongoDB that encourages and informs users that are struggling or just curious about suicide and depression.
+Affirmations is an app created by [Margaret Huang](https://github.com/margaret-jihua), [Steven Michaud](https://github.com/Michaudsr), and [Tanner Leigh](https://github.com/thleigh) through React and MongoDB that encourages and informs users that are struggling or just curious about suicide and depression.
 It is simple by nature, allowing it to be accessible to everyone and beautiful to the eye to make it less intimidating to the average user. 
 Affirmations strives to be a safe place for all and keeps the mental and physical safety of its users as its highest priority.
 
