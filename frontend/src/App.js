@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <NavBar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
           <Route path="/signup" component={ Signup } />
