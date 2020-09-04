@@ -13,6 +13,16 @@ Site:
 *  Every user will be greeted with a daily inspirational quote that can be changed based off of how they're feeling. Users can like and comment a response to this quote and view other's as well.
 *  Users will have access to the suicide prevention hotline and find professional help in their area. If they feel intimidated to do so, users can chat with other users for more personal advice.
 
+## Technologies
+<hr />
+
+* React
+* Affirmations API
+* Map-Box Api
+* Passport/Authapp
+* Mongoose
+* Heroku
+
 ## Preparation 
 <hr/>
 
