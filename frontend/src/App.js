@@ -4,10 +4,10 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import Navbar from './components/Navbar';
 import Signup from './components/Signup';
-// import Login from './components/Login';
-// import Profile from './components/Profile';
+import Login from './components/Login';
+import Profile from './components/Profile';
 import Welcome from './components/Welcome';
-// import About from './components/About';
+import About from './components/About';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -59,12 +59,12 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path="/signup" component={ Signup } />
-          {/* <Route 
+          <Route 
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
-          /> */}
-          {/* <Route path="/about" component={ About } /> */}
-          {/* <PrivateRoute path="/profile" component={ Profile } user={currentUser} /> */}
+          />
+          <Route path="/about" component={ About } />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <Route exact path="/" component={ Welcome } />
         </Switch>
       </div>
