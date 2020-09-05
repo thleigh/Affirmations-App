@@ -29,3 +29,29 @@ Site:
 ![ERD](./README-assets/erd.png)
 
 ![wireframe](./README-assets/wireframe.png)
+
+## Component Hierarchy:
+
+```
+App
+|--NavBar
+|
+|---Signup 🖍
+|
+|---Login
+|
+|---Profile(Private)
+|   |--MoodTeacker 📍
+|
+|---About 🖍
+|
+|---Welcome
+|   |--Quote 📍
+|   |   |--QuoteCategory 📍
+|   |   |--Comment 📍
+|
+|---Resources 📍
+|   |--MapBox 📍
+|
+|--Footer
+```
