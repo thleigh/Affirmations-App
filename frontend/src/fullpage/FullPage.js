@@ -37,11 +37,15 @@ class FullPage extends React.Component {
         <ReactFullpage
           debug /* Debug logging */
 
-          // fullpage options
+          // API KEY
           licenseKey={'SCROLL_KEY'}
-          navigation
-          anchors={['firstPage', 'secondPage', 'thirdPage']}
+          // the page names in the url set as #
+          anchors={['Welcome', 'Resources', 'About']}
           sectionSelector={SECTION_SEL}
+          // navigation dots on the right
+          navigation
+          // Scroll speed
+          scrollingSpeed = {800}
 
           render={comp => (
             <ReactFullpage.Wrapper>
