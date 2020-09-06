@@ -4,14 +4,14 @@ import { Redirect } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
-    let [name, setName] = useState('');
+    let [username, setUsername] = useState('');
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
 
     const handleName = (e) => {
-        setName(e.target.value);
+        setUsername(e.target.value);
     }
 
     const handleEmail = (e) => {
@@ -30,7 +30,7 @@ const Signup = () => {
         e.preventDefault();
 
         if (password === confirmPassword) {
-            const newUser = { name, email, password }
+            const newUser = { username, email, password }
 
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
@@ -50,8 +50,8 @@ const Signup = () => {
                     <h2 className="py-2">Signup</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="name">Name</label>
-                            <input type="text" name="name" value={name} onChange={handleName} className="form-control"/>
+                            <label htmlFor="username">Username</label>
+                            <input type="text" name="username" value={username} onChange={handleName} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
