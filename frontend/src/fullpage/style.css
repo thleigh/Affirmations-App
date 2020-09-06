@@ -4,6 +4,7 @@ body{
 .custom-section{
     text-align: center;
     font-size: 4em;
+    z-index: 1
 }
 
 .fullPageBody {
