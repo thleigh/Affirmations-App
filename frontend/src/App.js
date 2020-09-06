@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-import ReactFullpage from '@fullpage/react-fullpage';
 
 import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import Welcome from './components/Welcome';
-// import About from './components/About';
-import Footer from './components/Footer';
+
 import FullPage from './fullpage/FullPage'
 import './App.css';
 
