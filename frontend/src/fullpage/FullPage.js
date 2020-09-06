@@ -18,13 +18,13 @@ class FullPage extends React.Component {
       sectionsColor: [...originalColors],
       fullpages: [
         {
-          text: 'Section 1',
+          page: <Welcome />
         },
         {
-          text: 'Section 2',
+          page: <About />
         },
         {
-          text: 'Section 3',
+          page: <About />,
         }
       ],
     };
@@ -51,9 +51,9 @@ class FullPage extends React.Component {
 
           render={comp => (
             <ReactFullpage.Wrapper>
-              {fullpages.map(({ text }) => (
-                <div key={text} className={SEL}>
-                  <h1>{text}</h1>
+              {fullpages.map(({ page }) => (
+                <div key={page} className={SEL}>
+                  <h1>{page}</h1>
                 </div>
               ))}
             </ReactFullpage.Wrapper>
