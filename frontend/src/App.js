@@ -61,15 +61,13 @@ function App() {
       <NavBar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
-          <FullPage />
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
-          {/* <Route path="/about" component={ About } /> */}
-          {/* <Route exact path="/" component={ Welcome } /> */}
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
+          <FullPage />
         </Switch>
       </div>
       {/* <Footer /> */}
