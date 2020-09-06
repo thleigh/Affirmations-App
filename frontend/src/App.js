@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
+import ReactFullpage from '@fullpage/react-fullpage';
+
 import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Welcome from './components/Welcome';
-import About from './components/About';
+// import About from './components/About';
 import Footer from './components/Footer';
+import FullPage from './fullpage/FullPage'
 import './App.css';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -58,17 +61,18 @@ function App() {
       <NavBar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
+          <FullPage />
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
-          <Route path="/about" component={ About } />
+          {/* <Route path="/about" component={ About } /> */}
+          {/* <Route exact path="/" component={ Welcome } /> */}
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
-          <Route exact path="/" component={ Welcome } />
         </Switch>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
