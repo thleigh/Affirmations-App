@@ -45,7 +45,7 @@ class FullPage extends React.Component {
           // navigation dots on the right
           navigation
           // Scroll speed
-          scrollingSpeed = {800}
+          scrollingSpeed = {700}
 
           render={comp => (
             <ReactFullpage.Wrapper>
