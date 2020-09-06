@@ -1,21 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Welcome from '../components/Welcome';
 import About from '../components/About';
-import Styles from './style.css';
-import { Route } from 'react-router-dom';
+import './style.css';
 
 const SEL = 'custom-section';
 const SECTION_SEL = `.${SEL}`;
-
-const originalColors = ['#ff5f45', '#0798ec', '#fc6c7c', '#435b71', 'orange', 'blue', 'purple', 'yellow'];
 
 class FullPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sectionsColor: [...originalColors],
       fullpages: [
         {
           page: <Welcome />
@@ -47,13 +42,12 @@ class FullPage extends React.Component {
           navigation
           anchors={['firstPage', 'secondPage', 'thirdPage']}
           sectionSelector={SECTION_SEL}
-          sectionsColor={this.state.sectionsColor}
 
           render={comp => (
             <ReactFullpage.Wrapper>
               {fullpages.map(({ page }) => (
                 <div key={page} className={SEL}>
-                  <h1>{page}</h1>
+                  <div className="fullPageBody">{page}</div>
                 </div>
               ))}
             </ReactFullpage.Wrapper>
