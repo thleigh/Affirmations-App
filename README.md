@@ -6,11 +6,12 @@ Affirmations strives to be a safe place for all and keeps the mental and physica
 
 Site: 
 
+Back-end Repo: [Back-end](https://github.com/thleigh/Affirmations-Backend)
 
 ## Features
 <hr/>
 
-*  Every user will be greeted with a daily inspirational quote that can be changed based off of how they're feeling. Users can like and comment a response to this quote and view other's as well.
+*  Every user will be greeted with a daily inspirational quote that can be changed based off of how they're feeling. Users can save quotes to their profile and submit quotes of their own.
 *  Users will have access to the suicide prevention hotline and find professional help in their area. If they feel intimidated to do so, users can chat with other users for more personal advice.
 
 ## Technologies
@@ -22,6 +23,7 @@ Site:
 * Passport/Authapp
 * Mongoose
 * Heroku
+* [React-FullPage](https://github.com/alvarotrigo/react-fullpage)
 
 ## Preparation 
 <hr/>
