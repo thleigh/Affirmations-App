@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+// import { ErrorMessage } from '@hookform/error-message';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
@@ -9,6 +10,7 @@ const Signup = () => {
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
+    // let { register, errors, handleSubmit } = useForm();
 
     const handleName = (e) => {
         setUsername(e.target.value);
