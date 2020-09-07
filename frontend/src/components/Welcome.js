@@ -6,8 +6,6 @@ const Welcome = () => {
     let [affirmations, setAffirmations] = useState([]);
     let [count, setCount] = useState(0);
     let [clock, setClock] = useState();
-    let [quote, setQuote] = useState('');
-    let [author, setAuthor] = useState('');
      
     useEffect(() => {
         const interval = setClock(setInterval(() => {
@@ -19,10 +17,9 @@ const Welcome = () => {
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/affirmations`)
         .then(response => {
-            console.log(response.data);
             setAffirmations(response.data);
         });
-    }, [count]);
+    }, []);
 
     let affirmationList = affirmations.map((affirmation, idx) => {
         return (
@@ -34,8 +31,11 @@ const Welcome = () => {
     })
     
     while(true) {
-        let main = affirmationList[count]
-        console.log(main)
+        let index = Math.floor(Math.random() * affirmationList.length)
+
+        console.log(index);
+        let main = affirmationList[index]
+        // if (count === affirmationList.length){setCount(0)}
         return (
             <div>
                 {main}
