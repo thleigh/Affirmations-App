@@ -6,8 +6,6 @@ const Welcome = () => {
     let [affirmations, setAffirmations] = useState([]);
     let [count, setCount] = useState(0);
     let [clock, setClock] = useState();
-    let [quote, setQuote] = useState('');
-    let [author, setAuthor] = useState('');
      
     useEffect(() => {
         const interval = setClock(setInterval(() => {
@@ -42,8 +40,6 @@ const Welcome = () => {
             </div>
         )
     }
-
-
 }
 
 export default Welcome
