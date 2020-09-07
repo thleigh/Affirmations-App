@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 
+
 import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -50,8 +51,8 @@ function App() {
     }
   }
 
-  console.log('Current User', currentUser);
-  console.log('Authenicated', isAuthenticated);
+  // console.log('Current User', currentUser);
+  // console.log('Authenicated', isAuthenticated);
 
   return (
     <div>

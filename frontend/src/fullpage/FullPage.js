@@ -35,6 +35,7 @@ class FullPage extends React.Component {
     return (
       <div className="App">
         <ReactFullpage
+
           // API KEY
           licenseKey={'SCROLL_KEY'}
           // the page names in the url set as #
