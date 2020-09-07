@@ -35,8 +35,6 @@ class FullPage extends React.Component {
     return (
       <div className="App">
         <ReactFullpage
-          debug /* Debug logging */
-
           // API KEY
           licenseKey={'SCROLL_KEY'}
           // the page names in the url set as #
@@ -49,8 +47,8 @@ class FullPage extends React.Component {
 
           render={comp => (
             <ReactFullpage.Wrapper>
-              {fullpages.map(({ page }) => (
-                <div key={page} className={SEL}>
+              {fullpages.map(({page}) => (
+                <div className={SEL}>
                   <div className="fullPageBody">{page}</div>
                 </div>
               ))}
