@@ -38,22 +38,20 @@ Back-end Repo: [Back-end](https://github.com/thleigh/Affirmations-Backend)
 App
 |--NavBar
 |
-|---Signup 🖍
+|---Signup
 |
 |---Login
 |
 |---Profile(Private)
 |   |--MoodTeacker 📍
 |
-|---About 🖍
-|
-|---Welcome
-|   |--Quote 📍
-|   |   |--QuoteCategory 📍
+|---FullPage
+|   |--Welcome
 |   |   |--Comment 📍
-|
-|---Resources 📍
-|   |--MapBox 📍
+|   |   |--QuoteCategory 📍
+|   |--Resources 📍
+|   |   |--MapBox 📍
+|   |--About 🖍
 |
 |--Footer
 ```
