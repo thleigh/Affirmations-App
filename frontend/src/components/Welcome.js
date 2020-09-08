@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import background from '../assets/artboard.png'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Welcome = () => {
     let [affirmations, setAffirmations] = useState([]);
     let [count, setCount] = useState(0);
     let [clock, setClock] = useState();
-     
+
     useEffect(() => {
         const interval = setClock(setInterval(() => {
             setCount(count => count + 1);
@@ -24,8 +25,8 @@ const Welcome = () => {
     let affirmationList = affirmations.map((affirmation, idx) => {
         return (
             <div>
-                <h2><strong>{affirmation.quote}</strong></h2>
-                <p>{affirmation.author}</p>
+                <h2 className="front"><strong>{affirmation.quote}</strong></h2>
+                <p className="front">{affirmation.author}</p>
             </div>
         )
     })
@@ -37,8 +38,11 @@ const Welcome = () => {
         let main = affirmationList[index]
         // if (count === affirmationList.length){setCount(0)}
         return (
-            <div>
-                {main}
+            <div className="affirmationContainer">
+                {/* <img src={background} alt="" className="bg" /> */}
+                <div className="affirmation">
+                    {main}
+                </div>
             </div>
         )
     }

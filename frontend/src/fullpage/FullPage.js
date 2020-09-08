@@ -14,6 +14,7 @@ class FullPage extends React.Component {
       fullpages: [
         {
           page: <Welcome />
+          
         },
         {
           page: <About />
