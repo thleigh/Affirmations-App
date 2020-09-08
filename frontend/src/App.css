@@ -6,6 +6,7 @@ html {
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -29,3 +30,12 @@ nav {
   margin: -2px auto auto 10px;
 }
 
+.aboutMain {
+  text-align: left;
+  width: 50%;
+  margin: 0 auto 5% 60%;
+}
+
+.aboutBody {
+  font-size: 17px;
+}

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 // import { ErrorMessage } from '@hookform/error-message';
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
@@ -33,8 +36,8 @@ const Signup = () => {
         }
     }
 
-    const handlePhoneNumber = (e) => {
-        setPhoneNumber(e.target.value)
+    const handlePhoneNumber = (phone) => {
+        setPhoneNumber(phone)
     }
 
     const handleConfirmPassword = (e) => {
@@ -88,7 +91,12 @@ const Signup = () => {
                         {volunteer ? 
                             <div className="form-group phoneNumber">
                                 <label htmlFor="phoneNumber">Phone Number</label>
-                                <input type="tel" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumber} className="form-control"/>
+                                {/* <input type="tel" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumber} className="form-control"/> */}
+                                <PhoneInput
+                                    country={'us'}
+                                    value={phoneNumber}
+                                    onChange={handlePhoneNumber}
+                                />
                             </div> 
                         : null}
                         
