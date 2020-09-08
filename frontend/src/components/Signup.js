@@ -33,7 +33,7 @@ const Signup = () => {
 
         if (password === confirmPassword) {
             const newUser = { username, email, password }
-
+            
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
                 console.log(response);
