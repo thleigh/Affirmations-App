@@ -31,7 +31,7 @@ const NavBar = (props) => {
                                 <NavLink className="nav-link"  to="/profile">Profile</NavLink>
                             </li>
                             <li className="nav-item">
-                                <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>
+                                <NavLink to="/" onClick={props.handleLogout} className="nav-link logout-link">Logout</NavLink>
                             </li>
                         </ul>
                         : <ul className="navbar-nav ml-auto">
