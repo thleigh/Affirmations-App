@@ -29,7 +29,6 @@ const Login = (props) => {
 
         axios.post(`${REACT_APP_SERVER_URL}/api/users/login`, userData)
         .then(response => {
-            window.flash(`Welcome back ` , 'success')
             const { token } = response.data;
             // Save token to localStorage
             localStorage.setItem('jwtToken', token);

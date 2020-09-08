@@ -70,7 +70,7 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} 
           />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
-          <FullPage />
+          <FullPage user={currentUser}/>
         </Switch>
         <Flash />
       </div>
