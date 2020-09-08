@@ -8,7 +8,10 @@ const Profile = (props) => {
         <p><strong>Name: </strong>{props.user.name}</p>
         <p><strong>Email: </strong>{props.user.email}</p>
         <p><strong>ID: </strong>{props.user.id}</p>
+        <p><strong>Volunteer: </strong>{props.user.volunteer}</p>
+        {props.user.volunteer ? <p><strong>Phone Number: </strong>{props.user.phoneNumber}</p> : null}
     </div>) : <h4>Loading...</h4>
+    console.log(props.user)
 
     const errorDiv = () => {
         return (
