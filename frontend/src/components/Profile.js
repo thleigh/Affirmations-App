@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 
 const Profile = (props) => {
+    window.flash(`Welcome back, ${props.user.name}` , 'success')
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
