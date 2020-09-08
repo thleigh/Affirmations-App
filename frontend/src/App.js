@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-
-
+import Bus from './utils/Bus';
+import Flash from './components/Flash'
 import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -11,6 +11,10 @@ import Profile from './components/Profile';
 
 import FullPage from './fullpage/FullPage'
 import './App.css';
+
+window.flash = (message, type="success") => Bus.emit('flash', ({message, type}))
+window.flash = (message, type="error") => Bus.emit('flash', ({message, type}))
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -46,6 +50,7 @@ function App() {
   const handleLogout = () => {
     if (localStorage.getItem('jwtToken')) {
       localStorage.removeItem('jwtToken');
+      window.flash('See you next time!', 'success')
       setCurrentUser(null);
       setIsAuthenticated(false);
     }
@@ -67,6 +72,7 @@ function App() {
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <FullPage />
         </Switch>
+        <Flash />
       </div>
       {/* <Footer /> */}
     </div>
