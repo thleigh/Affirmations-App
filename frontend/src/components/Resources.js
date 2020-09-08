@@ -11,12 +11,14 @@ const Resources = () => {
         })
         return (
             <div>
-                <h2>Call the National Suicide Prevention Lifeline</h2>
-                <h1>1-800-273-8255</h1>
-                <p>"The National Suicide Prevention Lifeline is a national network of local crisis centers that provides
-                    free and confidential emotional support to peopl ein suicidal crisis or emotional distress 24 hours
-                    a day, 7 days a week.
-                </p>
+                <div>     
+                    <h2>Call the National Suicide Prevention Lifeline</h2>
+                    <h1>1-800-273-8255</h1>
+                    <p>"The National Suicide Prevention Lifeline is a national network of local crisis centers that provides
+                        free and confidential emotional support to peopl ein suicidal crisis or emotional distress 24 hours
+                        a day, 7 days a week.
+                    </p>
+                </div>
             </div>
         )
 }

@@ -1,3 +1,84 @@
+@media screen and (max-width: 1200px) {
+  .aboutGrid > div {
+    grid-column: span 2;
+    height: 260px;
+  }
+  .aboutGrid > div{
+    margin: -130px auto auto -160px;
+  }
+  .aboutGrid {
+    margin-top: 100px;
+  }
+  .aboutName{
+    width: 200px;
+    margin: -130px auto auto 400px;
+  }
+  .logoLinks{
+    margin: 10px auto auto 400px;
+  }
+  .aboutContainer > div {
+    margin: 10px -70px auto auto;
+  }
+  .aboutMain > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .aboutGrid > div {
+    grid-column: span 2;
+    height: 260px;
+  }
+  .aboutGrid > div{
+    margin: -150px auto auto -160px;
+  }
+  .aboutGrid {
+    margin-top: 100px;
+  }
+  .aboutName{
+    width: 100px;
+    margin: -140px auto auto 400px;
+  }
+  .logoLinks{
+    margin: 10px auto auto 400px;
+  }
+  .aboutContainer > div {
+    margin: 50px -100px auto auto;
+  }
+  .aboutMain > p{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .aboutGrid > div{
+    display: none;
+  }
+  
+  .aboutName{
+    display: none;
+  }
+  .logoLinks > a{
+    display: none;
+  }
+  .aboutContainer > div {
+    margin: -200px 300px auto auto;
+  }
+  .aboutMain > div {
+    margin-top: -100px;
+  }
+  .aboutMain >p{
+    text-align: center;
+    width: 500px;
+  }
+  .aboutMain > h3{
+    text-align: center;
+    width: 500px;
+  }
+}
+
+
 html {
   position: relative;
   min-height: 100%;
@@ -46,18 +127,69 @@ nav {
 
 .aboutGrid {
   display: grid;
-  width: 200px;
+  width: 50%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 30px;
   margin: -25% auto -10% -6%;
 }
 
-.aboutGrid img {
+.margaret {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.steven {
+  grid-column: span 1;
+}
+
+.tanner {
+  grid-column: span 1;
+}
+
+.steven img {
   width: 200px;
+}
+
+.steven img:hover {
+  opacity: 80%;
+}
+
+.margaret img {
+  width: 200px;
+}
+
+.margaret img:hover {
+  opacity: 80%;
+}
+
+.tanner img {
+  width: 200px;
+}
+
+.tanner img:hover {
+  opacity: 80%;
 }
 
 .logoLinks img {
   width: 40px;
   padding: 5px;
   margin-top: -15px;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

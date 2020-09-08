@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import background from '../assets/artboard.png'
+
+import { CSSTransitionGroup } from 'react-transition-group'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Welcome = () => {
@@ -24,9 +25,14 @@ const Welcome = () => {
 
     let affirmationList = affirmations.map((affirmation, idx) => {
         return (
-            <div>
-                <h2 className="front"><strong>{affirmation.quote}</strong></h2>
-                <p className="front">{affirmation.author}</p>
+            <div>  
+                <CSSTransitionGroup
+                    transitionName="example"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}>                    
+                    <h2 className="front"><strong>{affirmation.quote}</strong></h2>
+                    <p className="front">{affirmation.author}</p>
+                </CSSTransitionGroup>
             </div>
         )
     })
@@ -38,14 +44,16 @@ const Welcome = () => {
         let main = affirmationList[index]
         // if (count === affirmationList.length){setCount(0)}
         return (
-            <div className="affirmationContainer">
-                {/* <img src={background} alt="" className="bg" /> */}
-                <div className="affirmation">
+            <div className="affirmationContainer">   
+                <CSSTransitionGroup
+                    transitionName="example"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>  
                     {main}
-                </div>
+                </CSSTransitionGroup>
             </div>
         )
     }
 }
 
-export default Welcome
+export default Welcome 
