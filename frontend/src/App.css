@@ -1,35 +1,39 @@
 @media screen and (max-width: 1200px) {
-  .aboutMain > p {
-    font-size: 14px;
+  .aboutGrid > div {
+    margin: -260px -50px auto 125px;
   }
-  .steven > img {
-    width: 50px;
+  .aboutMain > p {
+    width: 800px;
+    text-align: center;
+  }
+  .aboutMain > h3 {
+    width: 800px;
+    text-align: center;
+  }
+  .aboutContainer > div{
+    margin: 100px 365px auto auto;
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1000px) {
   .aboutGrid > div {
-    grid-column: span 2;
-    height: 260px;
+    margin: -320px -100px auto 125px;
   }
-  .aboutGrid > div{
-    margin: -110px auto auto -80px;
+
+  .aboutGridMain > div{
+    margin-left: -150px;
   }
-  .aboutName{
-    width: 100px;
-    margin: -140px auto auto 300px;
+
+  .aboutMain > p {
+    width: 800px;
+    text-align: center;
   }
-  .logoLinks{
-    margin: 10px auto auto 300px;
+  .aboutMain > h3 {
+    width: 800px;
+    text-align: center;
   }
-  .aboutContainer > div {
-    margin: 100px -60px auto auto;
-  }
-  .aboutMain > p{
-    font-size: 14px;
-  }
-  .aboutGridMain >div {
-    margin-top: -300px
+  .aboutContainer > div{
+    margin: 100px 300px auto -70px;
   }
 }
 
