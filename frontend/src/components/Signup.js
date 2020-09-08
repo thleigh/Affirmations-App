@@ -10,6 +10,8 @@ const Signup = () => {
     let [password, setPassword] = useState('');
     let [confirmPassword, setConfirmPassword] = useState('');
     let [redirect, setRedirect] = useState(false);
+    let [volunteer, setVolunteer] = useState(false);
+    let [phoneNumber, setPhoneNumber] = useState('');
     // let { register, errors, handleSubmit } = useForm();
 
     const handleName = (e) => {
@@ -24,6 +26,17 @@ const Signup = () => {
         setPassword(e.target.value);
     }
 
+    const handleVolunteer = () => {
+        setVolunteer(true)
+        if (volunteer) {
+            setVolunteer(false)
+        }
+    }
+
+    const handlePhoneNumber = (e) => {
+        setPhoneNumber(e.target.value)
+    }
+
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
     }
@@ -32,7 +45,7 @@ const Signup = () => {
         e.preventDefault();
 
         if (password === confirmPassword) {
-            const newUser = { username, email, password }
+            const newUser = { username, email, password, volunteer, phoneNumber }
 
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
@@ -67,6 +80,18 @@ const Signup = () => {
                             <label htmlFor="confirmPassword">Confirm Password</label>
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword} className="form-control"/>
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="volunteer">Volunteer as a peer councilor</label>
+                            <br></br>
+                            <input type="checkbox" name="volunteer" value={volunteer} onChange={handleVolunteer}/>
+                        </div>
+                        {volunteer ? 
+                            <div className="form-group phoneNumber">
+                                <label htmlFor="phoneNumber">Phone Number</label>
+                                <input type="tel" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumber} className="form-control"/>
+                            </div> 
+                        : null}
+                        
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
