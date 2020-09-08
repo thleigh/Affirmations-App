@@ -2,6 +2,7 @@ import React from 'react'
 import margaret from '../assets/margaret.png'
 import margaret2 from '../assets/margaret2.png'
 import steven from '../assets/steven.png'
+import steven2 from '../assets/steven2.png'
 import tanner from '../assets/tanner.png'
 import tanner2 from '../assets/tanner2.png'
 import github from '../assets/githublogo.png'
@@ -33,7 +34,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="steven">
-                    <img src={steven} alt="Steven"/>
+                    <img src={steven2} alt="Steven"/>
                     <p className="aboutName">Steven Michaud</p>
                     <div className="logoLinks">
                         <a href="https://github.com/Michaudsr" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
