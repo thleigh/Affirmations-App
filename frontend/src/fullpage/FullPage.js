@@ -2,6 +2,7 @@ import React from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Welcome from '../components/Welcome';
 import About from '../components/About';
+import Resources from '../components/Resources'
 import './style.css';
 
 const SEL = 'custom-section';
@@ -18,7 +19,7 @@ class FullPage extends React.Component {
           
         },
         {
-          page: <About />
+          page: <Resources />
         },
         {
           page: <About />,
