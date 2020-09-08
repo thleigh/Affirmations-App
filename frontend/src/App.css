@@ -33,9 +33,31 @@ nav {
 .aboutMain {
   text-align: left;
   width: 50%;
-  margin: 0 auto 5% 60%;
+  margin: -20% auto -10% 60%;
 }
 
 .aboutBody {
   font-size: 17px;
+}
+
+.aboutContainer {
+  margin-right: 60px;
+}
+
+.aboutGrid {
+  display: grid;
+  width: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: -25% auto -10% -6%;
+}
+
+.aboutGrid img {
+  width: 200px;
+}
+
+.logoLinks img {
+  width: 40px;
+  padding: 5px;
+  margin-top: -15px;
 }
