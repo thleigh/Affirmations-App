@@ -1,52 +1,35 @@
 @media screen and (max-width: 1200px) {
-  .aboutGrid > div {
-    grid-column: span 2;
-    height: 260px;
-  }
-  .aboutGrid > div{
-    margin: -130px auto auto -160px;
-  }
-  .aboutGrid {
-    margin-top: 100px;
-  }
-  .aboutName{
-    width: 200px;
-    margin: -130px auto auto 400px;
-  }
-  .logoLinks{
-    margin: 10px auto auto 400px;
-  }
-  .aboutContainer > div {
-    margin: 10px -70px auto auto;
-  }
-  .aboutMain > p{
+  .aboutMain > p {
     font-size: 14px;
+  }
+  .steven > img {
+    width: 50px;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
   .aboutGrid > div {
     grid-column: span 2;
     height: 260px;
   }
   .aboutGrid > div{
-    margin: -150px auto auto -160px;
-  }
-  .aboutGrid {
-    margin-top: 100px;
+    margin: -110px auto auto -80px;
   }
   .aboutName{
     width: 100px;
-    margin: -140px auto auto 400px;
+    margin: -140px auto auto 300px;
   }
   .logoLinks{
-    margin: 10px auto auto 400px;
+    margin: 10px auto auto 300px;
   }
   .aboutContainer > div {
-    margin: 50px -100px auto auto;
+    margin: 100px -60px auto auto;
   }
   .aboutMain > p{
     font-size: 14px;
+  }
+  .aboutGridMain >div {
+    margin-top: -300px
   }
 }
 
