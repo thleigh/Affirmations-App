@@ -1,51 +1,62 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 const Affirmation = (props) => {
 
-    let [numLikes,setNumLikes] = useState(0)
+    let [affirmation, setAffirmation] = useState(undefined)
+
+    useEffect(() => {
+        axios.get(`${REACT_APP_SERVER_URL}/api/affirmations/${props.affirmation._id}`)
+        .then(response => {
+            console.log(response.data);
+            setAffirmation(response.data[0])
+            console.log(affirmation);
+        })
+        .catch(err => console.log(err))
+    },[])
 
     let handleLike = (id,e) => {
-        e.preventDefault()
-        // console.log("ID: ",id);
-        // console.log("E-value: ", e.target[0].value);
-        const like = {_id: props.user.id}
+        let like = {"likes": {"_id": props.user.id}}
+        let unlike = {"likes": props.user.id}
 
-        props.user
-        ?
-        (
+        if (props.user) {
             // remove likes from affirmation array
-            // props.affirmation.likes.include(props.user.id)
-            // ?
-            // (
-            //     // setNumLikes(response.data.likes.length -1 ) 
-            // )
-            // :
-            (
-                axios.put(`${REACT_APP_SERVER_URL}/api/affirmations/likes/${id}`, like)
+            if (affirmation.likes.includes(props.user.id)) {
+                axios.put(`${REACT_APP_SERVER_URL}/api/affirmations/unlikes/${id}`, unlike)
                 .then(response => {
-                    setNumLikes(response.data.likes.length)
+                        setAffirmation(response.data);
                 })
                 .catch(err => console.log(err))
-            )
-        )
-        :
-        window.flash(`Please Log in to like the quote` , 'error')        
+            } else {
+                axios.put(`${REACT_APP_SERVER_URL}/api/affirmations/likes/${id}`, like)
+                .then(response => {
+                        setAffirmation(response.data);
+                })
+                .catch(err => console.log(err))
+            }
+            
+        } else {
+            window.flash(`Please Log in to like the quote` , 'error')   
+        }             
     }
 
     return(
         <div>
-            <h2 className="front"><strong>{props.affirmation.quote}</strong></h2>
-            <p className="front">{props.affirmation.author}</p>
-            <p>{numLikes || props.affirmation.likes.length} likes</p>
-            <form onSubmit={(e) => handleLike(props.affirmation._id,e)}>
-                <input name="likes" value={props.affirmation._id} hidden />
-                <button type="submit" className="btn btn-primary">Like❤️</button>
-            </form>
-                    
-            {/* <button onClick={handleComment(affirmation._id)}>comment💬</button> */}
+            {affirmation 
+            ? 
+            (<>
+                <h2 className="front"><strong>{affirmation.quote}</strong></h2>
+                <p className="front">{affirmation.author}</p>
+                <p>{affirmation.likes.length} likes</p>
+                <button onClick={(e) => handleLike(affirmation._id,e)} className="btn btn-primary">Like❤️</button>
+            </>
+            )
+            : 
+            <p>loading...</p>
+            }
+            
         </div>
     )
 }
