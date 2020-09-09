@@ -14,7 +14,6 @@ const About = () => {
     const [modalShowSteven, setModalShowSteven] = React.useState(false);
 
 
-
     function TannerModal(props) {
         return (
           <Modal

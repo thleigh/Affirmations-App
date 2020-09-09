@@ -11,7 +11,7 @@ import Profile from './components/Profile';
 import Error from './components/Error';
 
 import FullPage from './fullpage/FullPage'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 window.flash = (message, type="success") => Bus.emit('flash', ({message, type}))
