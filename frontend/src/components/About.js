@@ -39,7 +39,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );
@@ -70,7 +70,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );
@@ -101,7 +101,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );

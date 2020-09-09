@@ -13,7 +13,7 @@ const Resources = () => {
     let [lat, setLat] = useState('');
     let [log, setLog] = useState('');
     
-    const [volunteerNumber, setVolunteerNumber] = useState('');
+    const [volunteerNumber, setVolunteerNumber] = useState([]);
 
     const handleCity = (e) => {
         setCity(e.target.value);
@@ -26,7 +26,9 @@ const Resources = () => {
     const handleSubmit = (e) => {
         
     }
-    
+
+    // let index = Math.floor(Math.random() * volunteerNumberList.length)
+
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/users/phoneNumber`)
         .then(response => {
@@ -62,7 +64,7 @@ const Resources = () => {
                 <h3>{volunteerNumber.phoneNumber}</h3>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button onClick={props.onHide}>Close</Button>
+                  <Button className="btn-info" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
               </Modal>
             );
@@ -78,7 +80,7 @@ const Resources = () => {
                         free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours
                         a day, 7 days a week.
                     </p>
-                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowNumber(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => setModalShowNumber(true)}>
                         Number
                     </Button>
 
