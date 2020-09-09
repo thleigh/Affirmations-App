@@ -38,8 +38,7 @@ const Resources = () => {
     },[])
     
     let index = Math.floor(Math.random() * volunteerNumberList.length)
-    // console.log(index)
-    // console.log(volunteerNumberList[index]);
+    console.log(volunteerNumberList[index]);
 
     const handleVolunteerNumber = () => {
         setVolunteerNumber(volunteerNumberList[index])
