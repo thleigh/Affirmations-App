@@ -8,8 +8,10 @@ import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import Error from './components/Error';
 
 import FullPage from './fullpage/FullPage'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 window.flash = (message, type="success") => Bus.emit('flash', ({message, type}))
@@ -71,6 +73,7 @@ function App() {
           />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} />
           <FullPage user={currentUser}/>
+          <Route component={Error}/>
         </Switch>
         <Flash />
       </div>

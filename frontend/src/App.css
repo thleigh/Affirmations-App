@@ -180,3 +180,9 @@ nav {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+.errorContainer {
+  text-align: center;
+}
+
+

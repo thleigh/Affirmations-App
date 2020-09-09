@@ -19,14 +19,14 @@ const NavBar = (props) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarsExample07">
-                    <ul className="navbar-nav mr-auto"> 
+                    {/* <ul className="navbar-nav mr-auto"> 
                         <li className="nav-item">
                             <NavLink className="nav-link" exact to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link"  to="/#About">About</NavLink>
                         </li>
-                    </ul>
+                    </ul> */}
                     {
                         props.isAuth 
                         ? <ul className="navbar-nav ml-auto">
