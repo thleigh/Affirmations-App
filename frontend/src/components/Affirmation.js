@@ -47,7 +47,7 @@ const Affirmation = (props) => {
                 <h2 className="front"><strong>{affirmation.quote}</strong></h2>
                 <p className="front">{affirmation.author}</p>
                 <p>{affirmation.likes.length} likes</p>
-                <button onClick={(e) => handleLike(affirmation._id,e)}  className='btn btn-primary'>Like❤️</button>
+                <button onClick={(e) => handleLike(affirmation._id,e)}  className='btn btn-info'>Like 💜</button>
             </>
             )
             : 

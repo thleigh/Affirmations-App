@@ -25,19 +25,19 @@ const NavBar = (props) => {
                             ?
                             <>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                                    <NavLink className="nav-link text-info" to="/profile">Profile</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/" onClick={props.handleLogout} className="nav-link logout-link">Logout</NavLink>
+                                    <NavLink to="/" onClick={props.handleLogout} className="nav-link text-info">Logout</NavLink>
                                 </li>
                             </>
                             : 
                             <>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link"  to="/signup">Create Account</NavLink>
+                                    <NavLink className="nav-link text-info"  to="/signup">Create Account</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link"  to="/login">Login</NavLink>
+                                    <NavLink className="nav-link text-info"  to="/login">Login</NavLink>
                                 </li>
                             </>
                         }
