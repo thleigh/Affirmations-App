@@ -1,14 +1,112 @@
-import React from 'react'
-import margaret from '../assets/margaret.png'
-import margaret2 from '../assets/margaret2.png'
-import steven from '../assets/steven.png'
-import steven2 from '../assets/steven2.png'
-import tanner from '../assets/tanner.png'
-import tanner2 from '../assets/tanner2.png'
-import github from '../assets/githublogo.png'
-import linkedin from '../assets/linkedinlogo.png'
+import React, {useState} from 'react';
+import margaret2 from '../assets/margaret2.png';
+import steven2 from '../assets/steven2.png';
+import tanner2 from '../assets/tanner2.png';
+import github from '../assets/githublogo.png';
+import linkedin from '../assets/linkedinlogo.png';
+import {Button, Modal} from 'react-bootstrap'
+
+
 
 const About = () => {
+    const [modalShowTanner, setModalShowTanner] = React.useState(false);
+    const [modalShowMargaret, setModalShowMargaret] = React.useState(false);
+    const [modalShowSteven, setModalShowSteven] = React.useState(false);
+
+
+    function TannerModal(props) {
+        return (
+          <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                About Tanner
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <p>
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                consectetur ac, vestibulum at eros.
+            </p>
+            <div className="logoLinks">
+                <a href="https://github.com/thleigh" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
+                <a href="https://www.linkedin.com/in/tannerhleigh/" target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin"/></a>
+            </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
+      function MargaretModal(props) {
+        return (
+          <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                About Margaret
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <p>
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                consectetur ac, vestibulum at eros.
+            </p>
+            <div className="logoLinks">
+                <a href="https://github.com/margaret-jihua" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
+                <a href="https://www.linkedin.com/in/margaret-jihua/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin"/></a>
+            </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
+      function StevenModal(props) {
+        return (
+          <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                About Steven
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+            <p>
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+                consectetur ac, vestibulum at eros.
+            </p>
+            <div className="logoLinks">
+                <a href="https://github.com/Michaudsr" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
+                <a href="https://www.linkedin.com/in/steven-michaud/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin"/></a>
+            </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
     return (
         <>
         <div className="aboutContainer">
@@ -27,27 +125,36 @@ const About = () => {
             <div className="aboutGrid">
                 <div className="margaret">
                     <img src={margaret2} alt="Margaret"/>
-                    <p className="aboutName">Margaret Huang</p>
-                    <div className="logoLinks">
-                        <a href="https://github.com/margaret-jihua" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
-                        <a href="https://www.linkedin.com/in/margaret-jihua/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin"/></a>
-                    </div>
+                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowMargaret(true)}>
+                        Margaret Huang
+                    </Button>
+
+                    <MargaretModal
+                        show={modalShowMargaret}
+                        onHide={() => setModalShowMargaret(false)}
+                    />
                 </div>
                 <div className="steven">
                     <img src={steven2} alt="Steven"/>
-                    <p className="aboutName">Steven Michaud</p>
-                    <div className="logoLinks">
-                        <a href="https://github.com/Michaudsr" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
-                        <a href="https://www.linkedin.com/in/steven-michaud/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin"/></a>
-                    </div>
+                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowSteven(true)}>
+                        Steven Michaud
+                    </Button>
+
+                    <StevenModal
+                        show={modalShowSteven}
+                        onHide={() => setModalShowSteven(false)}
+                    />
                 </div>
                 <div className="tanner">
                     <img src={tanner2} alt="Tanner"/>
-                    <p className="aboutName">Tanner Leigh</p>
-                    <div className="logoLinks">
-                        <a href="https://github.com/thleigh" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
-                        <a href="https://www.linkedin.com/in/tannerhleigh/" target="_blank" rel="noopener noreferrer"><img src={linkedin}  alt="linkedin"/></a>
-                    </div>
+                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowTanner(true)}>
+                        Tanner Leigh
+                    </Button>
+
+                    <TannerModal
+                        show={modalShowTanner}
+                        onHide={() => setModalShowTanner(false)}
+                    />
                 </div>
             </div>
         </div>

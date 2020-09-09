@@ -180,3 +180,15 @@ nav {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+.errorContainer {
+  text-align: center;
+}
+
+.buttonModal {
+  margin-top: 10px;
+}
+
+.numberModal {
+  text-align: center;
+}
