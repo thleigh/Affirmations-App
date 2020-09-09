@@ -2,11 +2,14 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
+// import 'jquery/dist/jquery'
+// import "bootstrap/dist/js/bootstrap.js"
+// import "bootstrap/dist/css/bootstrap.js"
 
 const NavBar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg bg-white">
-            <div className="container">
+        <nav className="navbar navbar-expand-lg bg-white accordion">
+            <div className="container accordion">
                 <Link className="navbar-brand" to="/#Welcome" >Affirmations
                         <img src={logo} alt="ribbon" className="affirmationLogo"/>
                 </Link>
@@ -16,13 +19,13 @@ const NavBar = (props) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarsExample07">
-                    <ul className="navbar-nav mr-auto">
-                        {/* <li className="nav-item">
+                    <ul className="navbar-nav mr-auto"> 
+                        <li className="nav-item">
                             <NavLink className="nav-link" exact to="/">Home</NavLink>
-                        </li> */}
-                        {/* <li className="nav-item">
+                        </li>
+                        <li className="nav-item">
                             <NavLink className="nav-link"  to="/#About">About</NavLink>
-                        </li> */}
+                        </li>
                     </ul>
                     {
                         props.isAuth 
