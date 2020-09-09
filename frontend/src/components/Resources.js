@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 
 const Resources = () => {
-   
-        axios.get(`https://api.betterdoctor.com/2016-03-01/doctors?`)
-        .then(response => {
-            console.log(response.data);
-            
-        })
+    let [city, setCity] = useState('');
+    let [state, setState] = useState('');
+    let [poi, setPoi] = useState('');
+    let [lat, setLat] = useState('');
+    let [log, setLog] = useState('');
+
+    const handleCity = (e) => {
+        setCity(e.target.value);
+    }
+
+    const handleState = (e) => {
+        setState(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        
+    }
+
+      
         return (
+            <>
             <div>
                 <div>     
                     <h2>Call the National Suicide Prevention Lifeline</h2>
@@ -20,6 +34,16 @@ const Resources = () => {
                     </p>
                 </div>
             </div>
+            <div>
+                <form  onSubmit={handleSubmit}>
+                <input hidden type="text" name="poi" placeholder="poi" value="mental health, therapy"/>
+                <input type="text" name="city" id="" placeholder="city"/>
+                <input type="text" name="state" id="" placeholder="state"/>
+                <button type="submit">Submit </button>
+                </form>
+            </div>
+            </>
+            
         )
 }
 
