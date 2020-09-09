@@ -13,7 +13,8 @@ const Resources = () => {
     let [lat, setLat] = useState('');
     let [log, setLog] = useState('');
     
-    const [volunteerNumber, setVolunteerNumber] = useState([]);
+    const [volunteerNumberList, setVolunteerNumberList] = useState([]);
+    const [volunteerNumber, setVolunteerNumber] = useState('')
 
     const handleCity = (e) => {
         setCity(e.target.value);
@@ -27,18 +28,24 @@ const Resources = () => {
         
     }
 
-    // let index = Math.floor(Math.random() * volunteerNumberList.length)
-
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/users/phoneNumber`)
         .then(response => {
             console.log(response.data);
-            setVolunteerNumber(response.data[10])
-            console.log(volunteerNumber);
+            setVolunteerNumberList(response.data)
         })
         .catch(err => console.log(err))
     },[])
     
+    let index = Math.floor(Math.random() * volunteerNumberList.length)
+    // console.log(index)
+    // console.log(volunteerNumberList[index]);
+
+    const handleVolunteerNumber = () => {
+        setVolunteerNumber(volunteerNumberList[index])
+    }
+
+
     const [modalShowNumber, setModalShowNumber] = React.useState(false);
 
         function PhoneNumber(props) {
@@ -80,7 +87,10 @@ const Resources = () => {
                         free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours
                         a day, 7 days a week.
                     </p>
-                    <Button className="buttonModal btn-info" variant="primary" onClick={() => setModalShowNumber(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
+                        setModalShowNumber(true);
+                        handleVolunteerNumber();
+                    }}>
                         Number
                     </Button>
 

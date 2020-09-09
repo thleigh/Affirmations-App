@@ -21,9 +21,7 @@ const Flash = () => {
 
     useEffect(() => {
         if(document.querySelector('.close') !== null) {
-            document.
-            querySelector('.close').
-            addEventListener('click', () => setVisibility(false));
+            document.querySelector('.close').addEventListener('click', () => setVisibility(false));
         }
     })
 
