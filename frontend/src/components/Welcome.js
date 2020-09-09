@@ -25,7 +25,7 @@ const Welcome = (props) => {
 
     let affirmationList = affirmations.map((affirmation, idx) => {
         return (
-            <Affirmation key={idx} affirmation={affirmation} user={props.user} setAffirmations={setAffirmations}/>
+            <Affirmation key={idx} affirmation={affirmation} user={props.user} />
         )
     })
     
