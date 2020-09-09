@@ -17,8 +17,6 @@ const Flash = () => {
                 setVisibility(false);
             }, 4000);
         });
-                
-
     }, []);
 
     useEffect(() => {

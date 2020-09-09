@@ -9,9 +9,7 @@ const Affirmation = (props) => {
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/affirmations/${props.affirmation._id}`)
         .then(response => {
-            console.log(response.data);
             setAffirmation(response.data[0])
-            console.log(affirmation);
         })
         .catch(err => console.log(err))
     },[])
