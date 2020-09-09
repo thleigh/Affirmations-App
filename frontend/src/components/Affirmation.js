@@ -9,20 +9,30 @@ const Affirmation = (props) => {
 
     let handleLike = (id,e) => {
         e.preventDefault()
-        console.log("ID: ",id);
-        console.log("E-value: ", e.target[0].value);
+        // console.log("ID: ",id);
+        // console.log("E-value: ", e.target[0].value);
         const like = {_id: props.user.id}
-        console.log(like);
-        axios.put(`${REACT_APP_SERVER_URL}/api/affirmations/likes/${id}`, like)
-        .then(response => {
-            console.log(response);
-            props.user
-            ?
-            setNumLikes(response.data.likes.length)
-            :
-            window.flash(`Please Log in to like the quote` , 'error')
-        })
-        .catch(err => console.log(err))
+
+        props.user
+        ?
+        (
+            // remove likes from affirmation array
+            // props.affirmation.likes.include(props.user.id)
+            // ?
+            // (
+            //     // setNumLikes(response.data.likes.length -1 ) 
+            // )
+            // :
+            (
+                axios.put(`${REACT_APP_SERVER_URL}/api/affirmations/likes/${id}`, like)
+                .then(response => {
+                    setNumLikes(response.data.likes.length)
+                })
+                .catch(err => console.log(err))
+            )
+        )
+        :
+        window.flash(`Please Log in to like the quote` , 'error')        
     }
 
     return(
