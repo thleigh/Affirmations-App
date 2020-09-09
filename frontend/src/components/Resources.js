@@ -4,11 +4,11 @@ import axios from 'axios';
 
 const Resources = () => {
    
-        axios.get(`https://api.betterdoctor.com/2016-03-01/doctors?`)
-        .then(response => {
-            console.log(response.data);
+        // axios.get(`https://api.betterdoctor.com/2016-03-01/doctors?`)
+        // .then(response => {
+        //     console.log(response.data);
             
-        })
+        // })
         return (
             <div>
                 <div>     
