@@ -9,36 +9,111 @@ Site:
 Back-end Repo: [Back-end](https://github.com/thleigh/Affirmations-Backend)
 
 ## Features
-<hr/>
 
 *  Every user will be greeted with a daily inspirational/affirming quote. Users can save quotes to their profile by liking and submit quotes of their own.
 *  Users will have access to the suicide prevention hotline and find professional help in their area. If they feel intimidated to do so, users can chat with other users for more personal advice.
 
-## Technologies
-<hr />
+## Installation & Setup
 
-* React
-* Map-Box Api
-* Passport/Authapp
-* Mongoose
-* Heroku
-* [React-FullPage](https://github.com/alvarotrigo/react-fullpage)
-* React Bootstrap
+First, we need to set up npm. Use the npm install command to install all dependencies from the `package.json`.
+
+`$npm install`
+
+Your `package.json` should look like this:
+```
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.17",
+    "@mapbox/mapbox-sdk": "^0.11.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "bootstrap": "^4.5.2",
+    "events": "^3.2.0",
+    "jwt-decode": "^2.2.0",
+    "mapbox-gl": "^1.12.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.13.1",
+    "react-mapbox-gl": "^4.8.6",
+    "react-motion": "^0.5.2",
+    "react-phone-input-2": "^2.13.8",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-transition-group": "^1.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
+
+After installing, we need to create a `.env` that contains the your `local host Url`, the api key for `React-fullpage`, and the api key for `Map-Box GL`.
+
+In the `.env` file, insert:
+* `REACT_APP_SERVER_URL='your local host url'`
+* `SCROLL_KEY='your React-fullpage key'`
+* `REACT_APP_MAP_TOKEN='you Map-Box GL key'`
+
+You can sign-up and request your keys at [https://github.com/alvarotrigo/react-fullpage](https://github.com/alvarotrigo/react-fullpage) and [https://docs.mapbox.com/mapbox-gl-js/api/](https://docs.mapbox.com/mapbox-gl-js/api/)
+
+In order to get access to the databases, the backend must be installing as well.
+
+[Back-end](https://github.com/thleigh/Affirmations-Backend)
+
+After installing the backend, run it by using the command:
+
+`node server.js`
+
+Then, run the front end by using the command:
+
+`npm start`
+
+## Technologies
+
+* [React](https://reactjs.org/)
+* [Map-Box GL](https://docs.mapbox.com/mapbox-gl-js/api/) : used to find and show local professional help for users.
+* [Passport/Authapp](http://www.passportjs.org/) : allows authentication when using a password and username.
+* [Mongoose](https://mongoosejs.com/) : used to build schema-based solutions to model our application's data.
+* [Heroku](https://dashboard.heroku.com/apps) : houses the app.
+* [React-FullPage](https://github.com/alvarotrigo/react-fullpage) : creates the full page scroll on our main page.
+* [React Bootstrap](https://react-bootstrap.github.io/) : provides some design aspects for out buttons and forms. 
 
 ## Preparation 
-<hr/>
+
 Below is the ERD that we created to plan out our models. Having an ERD was an essential tool for our planning process. It helped us visually see our models and provide the team with efficient time to code. 
 To further prove our point. We initially thought we needed 4 models, but after creating the ERD, we realized we only needed 2. This saved us a lot of time.
 
 ![ERD](./README-assets/erd.png)
 
-<hr/>
 This is our wireframe. We made a wireframe to set what we wanted to see on our website before writing a single line of code. Although the final site does not look exactly the same, it saved us a lot of time. 
 
 ![wireframe](./README-assets/wireframe.png)
 
 ## Keeping Organized
-<hr/>
+
 A powerful tool that helped the team keep organized was [Trello](https://trello.com/).
 We set our Trello board to have a column for To-do, Work in Progress, Pull Request/Merge, Merged, Done, Project Resources, and Strech Goals. This helped us keep track of each team member's progress and where we needed to spend
 more of our time. It helped us organize sprints and effectively and satisfyingly see our goals.
