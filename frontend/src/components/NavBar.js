@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
+import NewAffirmation from './NewAffirmation';
 // import 'jquery/dist/jquery'
 // import "bootstrap/dist/js/bootstrap.js"
 // import "bootstrap/dist/css/bootstrap.js"
@@ -20,6 +21,7 @@ const NavBar = (props) => {
 
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav ml-auto">
+                        <NewAffirmation />
                         {
                             props.isAuth 
                             ?
