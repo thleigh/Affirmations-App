@@ -15,8 +15,9 @@ const Resources = () => {
     let [poi, setPoi] = useState('mental health clinic');
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
-    let [address, setAddress] = useState('find resources near you');
-   
+    // let [address, setAddress] = useState('find resources near you');
+    let [addresses, setAddresses] = useState([]);
+
     
     const [volunteerNumberList, setVolunteerNumberList] = useState([]);
     const [volunteerNumber, setVolunteerNumber] = useState('')
@@ -36,17 +37,33 @@ const Resources = () => {
         console.log('MAP', mapData)
         axios.post(`${REACT_APP_SERVER_URL}/api/resources`, mapData )
         .then(response => {
-            setLng(response.data.match.center[0]);
-            console.log(response.data.match.center[0])
-            setLat(response.data.match.center[1]);
+            // setLng(response.data.match.center[0]);
+            // console.log(response.data.match.center[0])
+            // setLat(response.data.match.center[1]);
+            // console.log('MAPBOX DATA', response.data);
+            // setAddress(response.data.match.place_name)
+            setLng(response.data.match[0].center[0]);
+            console.log(response.data.match[0].center[0])
+            setLat(response.data.match[0].center[1]);
             console.log('MAPBOX DATA', response.data);
-            setAddress(response.data.match.place_name)
+            let filterAddresses = response.data.match.map((match) => {
+                return match.place_name
+            });
+            setAddresses(filterAddresses)
+
         })
         .catch(error => {
             console.log(error)
         });
     }
-    
+    addresses = addresses.map((address, key) => {
+        return <div id={key}>
+            <div>
+            {address}
+            </div>
+            <br />
+            </div>
+    })
     const [modalShowNumber, setModalShowNumber] = useState(false);
     const [modalShowMap, setModalShowMap] = useState(false);
 
@@ -160,7 +177,7 @@ const Resources = () => {
                         <Mapbox lat={lat} lng={lng} />
                         </Col>
                         <Col>
-                            <h6>{address}</h6>
+                            <h6>{addresses}</h6>
                         </Col>
                     </Row>
                 </div>
