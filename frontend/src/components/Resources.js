@@ -1,17 +1,22 @@
 
 import React, {useState} from 'react';
-
-import axios from 'axios';
+import ReactDOM from 'react-dom';
+import mapboxgl from 'mapbox-gl';
 import {Button, Modal} from 'react-bootstrap';
+import axios from 'axios';
+import Mapbox from './Mapbox';
+
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 
 const Resources = () => {
 
     let [city, setCity] = useState('');
     let [state, setState] = useState('');
-    let [poi, setPoi] = useState('');
+    let [poi, setPoi] = useState('mental health');
     let [lat, setLat] = useState('');
-    let [log, setLog] = useState('');
+    let [lng, setLng] = useState('');
 
     const handleCity = (e) => {
         setCity(e.target.value);
@@ -21,19 +26,36 @@ const Resources = () => {
         setState(e.target.value);
     }
 
+    // const handlePoi = (e) => {
+    //     setPoi(e.target.value);
+    // }
+
+    // const handleLat = (e) => {
+    //     setLat(e.target.value);
+    // }
+
+    // const handleLog = (e) => {
+    //     setLog(e.target.value);
+    // }
+
     const handleSubmit = (e) => {
-        
+        e.preventDefault(); 
+        const mapData = { city, state, poi}
+        console.log('MAP', mapData)
+        axios.post(`${REACT_APP_SERVER_URL}/api/resources`, mapData )
+        .then(response => {
+            setLng(response.data.match.center[0]);
+            console.log(response.data.match.center[0])
+            setLat(response.data.match.center[1]);
+            console.log('MAPBOX DATA', response.data);
+        })
+        .catch(error => {
+            console.log(error)
+        });
     }
-
-      
-
+    
     const [modalShowNumber, setModalShowNumber] = React.useState(false);
 
-        // axios.get(`https://api.betterdoctor.com/2016-03-01/doctors?`)
-        // .then(response => {
-        //     console.log(response.data);
-            
-        // })
 
         function PhoneNumber(props) {
             return (
@@ -85,12 +107,12 @@ const Resources = () => {
             </div>
             <div>
                 <form  onSubmit={handleSubmit}>
-                <input hidden type="text" name="poi" placeholder="poi" value="mental health, therapy"/>
-                <input type="text" name="city" id="" placeholder="city"/>
-                <input type="text" name="state" id="" placeholder="state"/>
+                <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
+                <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
                 <button type="submit">Submit </button>
                 </form>
             </div>
+            <Mapbox lat={lat} lng={lng} />
             </>
             
         )

@@ -1,0 +1,46 @@
+<div id="map">
+    <script>
+        // let lat = document.getElementById('lat').textContent
+        // let long = document.getElementById('long').textContent
+        mapboxgl.accessToken = '<%= mapKey %>'
+        let map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [<%= match.center[0] %>, <%= match.center[1] %>],
+            zoom: 12
+        })
+        let geojson = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [<%= match.center[0] %>, <%= match.center[1] %>]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: '<%= match.place_name %>'
+                }
+            },
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [-122.2228, 37.1716]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'Dope vacation spot'
+                }
+            }
+        ]
+        }
+        geojson.features.forEach((marker)=> {
+            let el = document.createElement('div')
+            el.className = 'marker'
+            new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map)
+        })
+    </script>
+</div>
