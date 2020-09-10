@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import {Button, Modal} from 'react-bootstrap';
+import {Button, Modal, Form} from 'react-bootstrap';
 import axios from 'axios';
 import Mapbox from './Mapbox';
 
@@ -12,7 +12,7 @@ const Resources = () => {
 
     let [city, setCity] = useState('');
     let [state, setState] = useState('');
-    let [poi, setPoi] = useState('mental health');
+    let [poi, setPoi] = useState('mental health clinic');
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
 
@@ -65,6 +65,39 @@ const Resources = () => {
         setVolunteerNumber(volunteerNumberList[index])
     }
 
+        function MapBoxModal(props) {
+            return (
+              <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                className="numberModal"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title-vcenter">
+                    Enter your city and state to find local professional help
+                  </Modal.Title>
+                </Modal.Header>
+            <Form onSubmit={(e)=>handleSubmit}>
+                <Modal.Body>
+                <p className="aboutParagraph">
+                    This function is still in beta form so not all results will be
+                    <br />
+                    the real thing.
+                </p>
+                    <input type="text" name="city" id="" placeholder="city" onInput={handleCity}/>
+                    <input type="text" name="state" id="" placeholder="state" onInput={handleState}/>
+                    <button type="submit">Submit</button>
+                    <Mapbox lat={lat} lng={lng} />
+                </Modal.Body>
+            </Form>
+                <Modal.Footer>
+                  <Button className="btn-info" onClick={props.onHide}>Close</Button>
+                </Modal.Footer>
+              </Modal>
+            );
+        };
 
         function PhoneNumber(props) {
             return (
