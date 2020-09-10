@@ -4,6 +4,9 @@ Affirmations is an app created by [Margaret Huang](https://github.com/margaret-j
 It is simple by nature, allowing it to be accessible to everyone and beautiful to the eye to make it less intimidating to the average user. 
 Affirmations strives to be a safe place for all and keeps the mental and physical safety of its users as its highest priority.
 
+During these challenging times, it's more important than ever to break stigmas and talk about mental health. We encourage 
+everyone to take care of themselves, look out for others, and have open and honest conversations about our thoughts and feelings.
+
 Site: 
 
 Back-end Repo: [Back-end](https://github.com/thleigh/Affirmations-Backend)
@@ -154,3 +157,7 @@ App
 
 # Conclusion
 Affirmations was started on September 4th, 2020 and was completed on September 11th, 2020. Approximately 50% of this site was created through pair programming. Each member played an essential role in the creation of this site and we are very proud of the outcome. Please contact us if you would like to know more about our project and/or if you have any job openings for us 🥰.
+
+## The Final Look
+
+![Wireframe](./README-assets/finallook.png)
