@@ -40,8 +40,8 @@ This is our wireframe. We made a wireframe to set what we wanted to see on our w
 ## Keeping Organized
 <hr/>
 A powerful tool that helped the team keep organized was [Trello](https://trello.com/).
-We set our Trello board to have a column for To-do, Work in Progress, Pull Request/Merge, Merged, Done, Project Resources, and Strech Goals. This helped us keep track of each team members progress and where we needed to spend
-more of our time. It helped us organize sprints and effictively and satisfyingly see our goals.
+We set our Trello board to have a column for To-do, Work in Progress, Pull Request/Merge, Merged, Done, Project Resources, and Strech Goals. This helped us keep track of each team member's progress and where we needed to spend
+more of our time. It helped us organize sprints and effectively and satisfyingly see our goals.
 
 ![trello](./README-assets/trello.png)
 
@@ -70,4 +70,4 @@ App
 ```
 
 # Conclusion
-Affirmations was started on September 4th, 2020 and was completed on September 11th, 2020. Approximately 50% of this site was created through pair programming. Each member played an essential role to the creation of this site and we are very proud of the outcome. Please contact us if you would like to know more about our project and/or if you have any job openings for us 🥰.
+Affirmations was started on September 4th, 2020 and was completed on September 11th, 2020. Approximately 50% of this site was created through pair programming. Each member played an essential role in the creation of this site and we are very proud of the outcome. Please contact us if you would like to know more about our project and/or if you have any job openings for us 🥰.
