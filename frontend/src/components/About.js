@@ -29,7 +29,8 @@ const About = () => {
             </Modal.Header>
             <Modal.Body>
             <p className="aboutParagraph">
-                "Tanner is a full-stack engineer with a background in film and design. "
+                "Tanner is a full-stack engineer with a background in film and design. He loves rock climbing, photography, and hanging out with his friends.
+                Tanner is a developer that creates code that is "
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/thleigh" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>

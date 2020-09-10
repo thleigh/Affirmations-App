@@ -7,6 +7,7 @@ import Mapbox from './Mapbox';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
+
 const Resources = () => {
 
     let [city, setCity] = useState('');
@@ -15,6 +16,8 @@ const Resources = () => {
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
 
+   
+    
     const [volunteerNumberList, setVolunteerNumberList] = useState([]);
     const [volunteerNumber, setVolunteerNumber] = useState('')
 
@@ -44,6 +47,7 @@ const Resources = () => {
     }
     
     const [modalShowNumber, setModalShowNumber] = React.useState(false);
+    const [modalShowMap, setModalShowMap] = React.useState(false);
 
 
     useEffect(() => {
@@ -128,6 +132,7 @@ const Resources = () => {
             );
         };
 
+
         return (
             <>
             <div>
@@ -150,15 +155,22 @@ const Resources = () => {
                         onHide={() => setModalShowNumber(false)}
                     />
                 </div>
+                </div>
+
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
+                        setModalShowMap(true);
+                        }}>
+                        Find local professional help
+                    </Button>
+
+                    <MapBoxModal
+                        show={modalShowMap}
+                        onHide={() => setModalShowMap(false)}
+                    />
+
+                <div>
             </div>
-            <div>
-                <form  onSubmit={handleSubmit}>
-                <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
-                <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
-                <button type="submit">Submit </button>
-                </form>
-            </div>
-            <Mapbox lat={lat} lng={lng} />
+            {/* <Mapbox lat={lat} lng={lng} /> */}
             </>
             
         )
