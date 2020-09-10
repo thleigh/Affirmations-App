@@ -47,7 +47,6 @@ const Resources = () => {
     }
     
     const [modalShowNumber, setModalShowNumber] = React.useState(false);
-    const [modalShowMap, setModalShowMap] = React.useState(false);
 
 
     useEffect(() => {
@@ -66,39 +65,6 @@ const Resources = () => {
         setVolunteerNumber(volunteerNumberList[index])
     }
 
-        function MapBoxModal(props) {
-            return (
-              <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-                className="numberModal"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title-vcenter">
-                    Enter your city and state to find local professional help
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                <p className="aboutParagraph">
-                    This function is still in beta form so not all results will be
-                    <br />
-                    the real thing.
-                </p>
-                <form  onSubmit={handleSubmit}>
-                    <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
-                    <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
-                    <button type="submit">Submit </button>
-                </form>
-                    <Mapbox lat={lat} lng={lng} />
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button className="btn-info" onClick={props.onHide}>Close</Button>
-                </Modal.Footer>
-              </Modal>
-            );
-        };
 
         function PhoneNumber(props) {
             return (
@@ -132,7 +98,6 @@ const Resources = () => {
             );
         };
 
-
         return (
             <>
             <div>
@@ -155,22 +120,15 @@ const Resources = () => {
                         onHide={() => setModalShowNumber(false)}
                     />
                 </div>
-                </div>
-
-                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
-                        setModalShowMap(true);
-                        }}>
-                        Find local professional help
-                    </Button>
-
-                    <MapBoxModal
-                        show={modalShowMap}
-                        onHide={() => setModalShowMap(false)}
-                    />
-
-                <div>
             </div>
-            {/* <Mapbox lat={lat} lng={lng} /> */}
+            <div>
+                <form  onSubmit={handleSubmit}>
+                <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
+                <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
+                <button type="submit">Submit </button>
+                </form>
+            </div>
+            <Mapbox lat={lat} lng={lng} />
             </>
             
         )
