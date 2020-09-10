@@ -22,6 +22,9 @@ const NavBar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav ml-auto">
                         <NewAffirmation />
+                        {/* <li className="nav-item">
+                            <NavLink className="nav-link text-info" to="#NewAffirmation">Add Affirmation</NavLink>
+                        </li> */}
                         {
                             props.isAuth 
                             ?
