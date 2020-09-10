@@ -29,8 +29,10 @@ const About = () => {
             </Modal.Header>
             <Modal.Body>
             <p className="aboutParagraph">
-                "Tanner is a full-stack engineer with a background in film and design. He loves rock climbing, photography, and hanging out with his friends.
-                Tanner is a developer that creates code that is not only consumable but beautiful with the funcionality to back."
+                Tanner is a full-stack engineer based in Los Angeles, California, with a background in 
+                film and design. He loves rock climbing, photography, and getting late night tacos with his friends.
+                Tanner is a developer that creates code that is not only consumable but beautiful 
+                with the funcionality to back.
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/thleigh" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
@@ -59,9 +61,11 @@ const About = () => {
             </Modal.Header>
             <Modal.Body>
             <p className="aboutParagraph">
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
+            Margaret is a Junior Software Engineer with a passion to apply her professional 
+            knowledge in problem solving and team cooperating. A detail-orientated
+             person, making things as perfect as possible motivates her to do 
+             things better and better. She is ready to contribute my skills at high 
+             levels of complexity for a dynamic and stable workplace. She loves cats.
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/margaret-jihua" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
@@ -90,9 +94,10 @@ const About = () => {
             </Modal.Header>
             <Modal.Body>
             <p className="aboutParagraph">
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
+            Steven is a full stack software developer, that creates easier user experience for everyone 
+            involved and can add value in whatever role He is put in. Positive Change for the 
+            future keeps him motivated to continue developing high performing technology and 
+            adds value to the level of efficiency his work creates. He fosters 2 cats.
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/Michaudsr" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>

@@ -130,7 +130,7 @@ const Resources = () => {
                         setModalShowNumber(true);
                         handleVolunteerNumber();
                 }}>
-                    Number
+                    Generate a random volunteer's number
                 </Button>
                 
                 <PhoneNumber
