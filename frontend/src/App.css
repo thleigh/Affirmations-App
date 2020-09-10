@@ -282,3 +282,7 @@ animation: move-wave 3s;
 .mapResource {
   margin: 40px auto auto 0;
 }
+
+.liked-quotes {
+  text-align: center;
+}
