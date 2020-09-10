@@ -272,3 +272,13 @@ animation: move-wave 3s;
 .volunteerInfo {
   font-size: 12px;
 }
+
+.mapContainer {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.mapResource {
+  margin: 40px auto auto 0;
+}
