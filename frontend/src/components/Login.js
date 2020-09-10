@@ -40,6 +40,7 @@ const Login = (props) => {
             props.nowCurrentUser(decoded);
         })
         .catch(error => console.log(`Login error`, error));
+        window.flash('error could not log in', 'error')
     }
 
     if (props.user) return <Redirect to="/profile" user={props.user} />;
