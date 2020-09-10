@@ -12,7 +12,7 @@ const Resources = () => {
 
     let [city, setCity] = useState('');
     let [state, setState] = useState('');
-    let [poi, setPoi] = useState('mental health');
+    let [poi, setPoi] = useState('mental health clinic');
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
 
