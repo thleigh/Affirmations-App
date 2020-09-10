@@ -11,7 +11,7 @@
     text-align: center;
   }
   .aboutContainer > div{
-    margin: 100px 365px auto auto;
+    margin: 200px 365px auto auto;
   }
 }
 
@@ -33,7 +33,7 @@
     text-align: center;
   }
   .aboutContainer > div{
-    margin: 100px 300px auto -70px;
+    margin: 200px 300px auto -70px;
   }
 }
 
@@ -267,4 +267,8 @@ animation: move-wave 3s;
 .backgroundContainer {  
   margin: -100px auto auto auto;
   z-index: -1;
+}
+
+.volunteerInfo {
+  font-size: 12px;
 }

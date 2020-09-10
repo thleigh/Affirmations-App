@@ -94,8 +94,11 @@ const Signup = () => {
                         </div>
                         {volunteer ? 
                             <div className="form-group phoneNumber">
+                                <p className="volunteerInfo">
+                                    Volunteering as a peer councilor signifies that you are taking a pledge
+                                    to be available to take any calls and be open and understanding to any situation.
+                                </p>
                                 <label htmlFor="phoneNumber">Phone Number</label>
-                                {/* <input type="tel" name="phoneNumber" value={phoneNumber} onChange={handlePhoneNumber} className="form-control"/> */}
                                 <PhoneInput
                                     country={'us'}
                                     value={phoneNumber}
