@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import {Button, Modal, Form, Col} from 'react-bootstrap';
+import {Button, Modal, Form, Col, Row} from 'react-bootstrap';
 import axios from 'axios';
 import Mapbox from './Mapbox';
 
@@ -15,7 +15,7 @@ const Resources = () => {
     let [poi, setPoi] = useState('mental health clinic');
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
-
+    let [address, setAddress] = useState('find resources near you');
    
     
     const [volunteerNumberList, setVolunteerNumberList] = useState([]);
@@ -40,6 +40,7 @@ const Resources = () => {
             console.log(response.data.match.center[0])
             setLat(response.data.match.center[1]);
             console.log('MAPBOX DATA', response.data);
+            setAddress(response.data.match.place_name)
         })
         .catch(error => {
             console.log(error)
@@ -152,10 +153,17 @@ const Resources = () => {
                         <input className="form-control" type="text" name="state" id="" placeholder="state" onInput={handleState}/>
                     </Col>
                     <button className="btn btn-info" type="submit">Submit</button>
-                </Form.Row>   
-                    <div>
+                </Form.Row>  
+                <div className="mapResource">
+                    <Row>
+                        <Col>
                         <Mapbox lat={lat} lng={lng} />
-                    </div>
+                        </Col>
+                        <Col>
+                            <h6>{address}</h6>
+                        </Col>
+                    </Row>
+                </div>
                 </Modal.Body>
             </Form>
                 <Modal.Footer>
