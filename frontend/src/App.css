@@ -189,6 +189,10 @@ nav {
   text-align: center;
 }
 
+.aboutParagraph {
+  font-size: 15px;
+}
+
 @keyframes move_wave {
   0% {
       transform: translateX(0) translateZ(0) scaleY(1)

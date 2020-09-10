@@ -61,10 +61,13 @@ const Resources = () => {
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <p>
-                    Warning: not all community members are trained professionals and might not be able to provide the help that you are seeking.
+                <p className="aboutParagraph">
+                    Warning: not all community members are trained professionals and might not be 
                     <br />
-                    Community members are here to create a safe space for any type of conversation.
+                    able to provide the help that you are seeking.
+                    <br />
+                    Community members are here to create 
+                    a safe space for any type of conversation.
                 </p>
                 <h3>{volunteerNumber.phoneNumber}</h3>
                 </Modal.Body>
