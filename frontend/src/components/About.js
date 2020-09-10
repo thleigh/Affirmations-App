@@ -124,7 +124,7 @@ const About = () => {
             <div className="aboutGrid">
                 <div className="margaret">
                     <img src={margaret2} alt="Margaret"/>
-                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowMargaret(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => setModalShowMargaret(true)}>
                         Margaret Huang
                     </Button>
 
@@ -135,7 +135,7 @@ const About = () => {
                 </div>
                 <div className="steven">
                     <img src={steven2} alt="Steven"/>
-                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowSteven(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => setModalShowSteven(true)}>
                         Steven Michaud
                     </Button>
 
@@ -146,7 +146,7 @@ const About = () => {
                 </div>
                 <div className="tanner">
                     <img src={tanner2} alt="Tanner"/>
-                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowTanner(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => setModalShowTanner(true)}>
                         Tanner Leigh
                     </Button>
 
