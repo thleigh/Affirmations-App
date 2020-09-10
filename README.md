@@ -79,17 +79,21 @@ In the `.env` file, insert:
 
 You can sign-up and request your keys at [https://github.com/alvarotrigo/react-fullpage](https://github.com/alvarotrigo/react-fullpage) and [https://docs.mapbox.com/mapbox-gl-js/api/](https://docs.mapbox.com/mapbox-gl-js/api/)
 
-In order to get access to the databases, the backend must be installing as well.
+In order to get access to the databases, the backend must be installed as well.
 
 [Back-end](https://github.com/thleigh/Affirmations-Backend)
 
-After installing the backend, run it by using the command:
+Make sure to run `$npm install` in the backends command line.
 
-`node server.js`
+After the backend has been installed, run it by using the command:
+
+`$node server.js`
 
 Then, run the front end by using the command:
 
-`npm start`
+`$npm start`
+
+
 
 ## Technologies
 
