@@ -26,6 +26,14 @@ class FullPage extends React.Component {
         }
       ],
     };
+    this.setLatandLong = this.setLatandLong.bind(this)
+  }
+
+  setLatandLong(lat, lng) {
+    this.setState({
+      lat: lat,
+      lng: lng
+    })
   }
 
   render() {

@@ -1,7 +1,10 @@
-
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import ReactDOM from 'react-dom';
+import mapboxgl from 'mapbox-gl';
 import {Button, Modal} from 'react-bootstrap';
+import axios from 'axios';
+import Mapbox from './Mapbox';
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
@@ -9,11 +12,15 @@ const Resources = () => {
 
     let [city, setCity] = useState('');
     let [state, setState] = useState('');
-    let [poi, setPoi] = useState('');
+    let [poi, setPoi] = useState('mental health');
     let [lat, setLat] = useState('');
-    let [log, setLog] = useState('');
+    let [lng, setLng] = useState('');
+
+   
     
-    const [volunteerNumber, setVolunteerNumber] = useState('');
+    const [volunteerNumberList, setVolunteerNumberList] = useState([]);
+    const [volunteerNumber, setVolunteerNumber] = useState('')
+
 
     const handleCity = (e) => {
         setCity(e.target.value);
@@ -24,20 +31,40 @@ const Resources = () => {
     }
 
     const handleSubmit = (e) => {
-        
+        e.preventDefault(); 
+        const mapData = { city, state, poi}
+        console.log('MAP', mapData)
+        axios.post(`${REACT_APP_SERVER_URL}/api/resources`, mapData )
+        .then(response => {
+            setLng(response.data.match.center[0]);
+            console.log(response.data.match.center[0])
+            setLat(response.data.match.center[1]);
+            console.log('MAPBOX DATA', response.data);
+        })
+        .catch(error => {
+            console.log(error)
+        });
     }
     
+    const [modalShowNumber, setModalShowNumber] = React.useState(false);
+
+
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/users/phoneNumber`)
         .then(response => {
             console.log(response.data);
-            setVolunteerNumber(response.data[10])
-            console.log(volunteerNumber);
+            setVolunteerNumberList(response.data)
         })
         .catch(err => console.log(err))
     },[])
     
-    const [modalShowNumber, setModalShowNumber] = React.useState(false);
+    let index = Math.floor(Math.random() * volunteerNumberList.length)
+    console.log(volunteerNumberList[index]);
+
+    const handleVolunteerNumber = () => {
+        setVolunteerNumber(volunteerNumberList[index])
+    }
+
 
         function PhoneNumber(props) {
             return (
@@ -54,15 +81,18 @@ const Resources = () => {
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <p>
-                    Warning: not all community members are trained professionals and might not be able to provide the help that you are seeking.
+                <p className="aboutParagraph">
+                    Warning: not all community members are trained professionals and might not be 
                     <br />
-                    Community members are here to create a safe space for any type of conversation.
+                    able to provide the help that you are seeking.
+                    <br />
+                    Community members are here to create 
+                    a safe space for any type of conversation.
                 </p>
                 <h3>{volunteerNumber.phoneNumber}</h3>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button onClick={props.onHide}>Close</Button>
+                  <Button className="btn-info" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
               </Modal>
             );
@@ -78,7 +108,10 @@ const Resources = () => {
                         free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours
                         a day, 7 days a week.
                     </p>
-                    <Button className="buttonModal" variant="primary" onClick={() => setModalShowNumber(true)}>
+                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
+                        setModalShowNumber(true);
+                        handleVolunteerNumber();
+                    }}>
                         Number
                     </Button>
 
@@ -90,12 +123,12 @@ const Resources = () => {
             </div>
             <div>
                 <form  onSubmit={handleSubmit}>
-                <input hidden type="text" name="poi" placeholder="poi" value="mental health, therapy"/>
-                <input type="text" name="city" id="" placeholder="city"/>
-                <input type="text" name="state" id="" placeholder="state"/>
+                <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
+                <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
                 <button type="submit">Submit </button>
                 </form>
             </div>
+            <Mapbox lat={lat} lng={lng} />
             </>
             
         )
