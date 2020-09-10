@@ -107,12 +107,16 @@ Then, run the front end by using the command:
 
 ## Preparation 
 
+We wanted to make things as simple as possible for the user. User's shouldn't have to feel intimidated or pressured by a website that has a lot of small text. We decided to use bootstrap as our main design too to provide smooth transitions and beautiful little buttons and forms. 
+
+We wanted everything to be accessible to the user. So we chose to use React-fullpage in order to add the full page scroll effect and keeping all the information the user may need inside of 3 quick scrolls. 
+
 Below is the ERD that we created to plan out our models. Having an ERD was an essential tool for our planning process. It helped us visually see our models and provide the team with efficient time to code. 
 To further prove our point. We initially thought we needed 4 models, but after creating the ERD, we realized we only needed 2. This saved us a lot of time.
 
 ![ERD](./README-assets/erd.png)
 
-This is our wireframe. We made a wireframe to set what we wanted to see on our website before writing a single line of code. Although the final site does not look exactly the same, it saved us a lot of time. 
+This is our wireframe. We made a wireframe to set what we wanted to see on our website before writing a single line of code. Although the final site does not look exactly the same, it saved us a lot of time.
 
 ![wireframe](./README-assets/wireframe.png)
 
