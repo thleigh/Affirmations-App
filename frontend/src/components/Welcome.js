@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Affirmation from './Affirmation'
 import { CSSTransitionGroup } from 'react-transition-group'
-import Background from './Background'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Welcome = (props) => {
@@ -41,8 +40,9 @@ const Welcome = (props) => {
             <div className="affirmationContainer">   
                 <CSSTransitionGroup
                     transitionName="example"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>  
+                    classNames="example"
+                    transitionEnterTimeout={700}
+                    transitionLeaveTimeout={700}>  
                     {main}
                 </CSSTransitionGroup>
             </div>
