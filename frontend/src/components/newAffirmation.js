@@ -57,6 +57,8 @@ const NewAffirmation = () => {
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <Modal.Body>
                                 <div className="form-group">
+                                <p className="volunteerInfo">Quotes must be affirming and uplifting. They can be your own words, or the words of someone else.</p>
+
                                 <label htmlFor="quote">Quote: </label>
                                 <input name="quote" type="text" value={quote} onInput={handleQuote} className="form-control"/>
                             </div>
