@@ -31,7 +31,7 @@ const NewAffirmation = () => {
         e.preventDefault()
         axios.post(`${REACT_APP_SERVER_URL}/api/affirmations`,{"quote": quote, "author": author})
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             setSubmitted(true)
         })
         .catch(err => console.log(err))

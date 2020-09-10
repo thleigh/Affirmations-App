@@ -52,12 +52,12 @@ const Signup = () => {
             
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
-                console.log(response);
-                window.flash('user has been created successfully!', 'success')
+                // console.log(response);
+                window.flash('User has been created successfully!', 'success')
                 setRedirect(true);
             })
             .catch(error => {
-                window.flash('error user was not created', 'error')
+                window.flash('error, User was not created', 'error')
                 console.log(error)
             });
         }

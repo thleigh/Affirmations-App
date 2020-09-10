@@ -32,7 +32,7 @@ const Welcome = (props) => {
     while(true) {
         let index = Math.floor(Math.random() * affirmationList.length)
 
-        console.log(index);
+        // console.log(index);
 
         let main = affirmationList[index]
         return (

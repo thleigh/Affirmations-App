@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ReactDOM, { render } from 'react-dom';
+import React, { useEffect, useRef } from 'react';
+// import ReactDOM, { render } from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-
 
 
 const REACT_APP_MAP_TOKEN = process.env.REACT_APP_MAP_TOKEN

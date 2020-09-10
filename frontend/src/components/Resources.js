@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import ReactDOM from 'react-dom';
-import mapboxgl from 'mapbox-gl';
 import {Button, Modal, Form, Col, Row} from 'react-bootstrap';
 import axios from 'axios';
 import Mapbox from './Mapbox';
@@ -34,7 +32,7 @@ const Resources = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         const mapData = { city, state, poi}
-        console.log('MAP', mapData)
+        // console.log('MAP', mapData)
         axios.post(`${REACT_APP_SERVER_URL}/api/resources`, mapData )
         .then(response => {
             // setLng(response.data.match.center[0]);
@@ -43,9 +41,9 @@ const Resources = () => {
             // console.log('MAPBOX DATA', response.data);
             // setAddress(response.data.match.place_name)
             setLng(response.data.match[0].center[0]);
-            console.log(response.data.match[0].center[0])
+            // console.log(response.data.match[0].center[0])
             setLat(response.data.match[0].center[1]);
-            console.log('MAPBOX DATA', response.data);
+            // console.log('MAPBOX DATA', response.data);
             let filterAddresses = response.data.match.map((match) => {
                 return match.place_name
             });
@@ -71,14 +69,14 @@ const Resources = () => {
     useEffect(() => {
         axios.get(`${REACT_APP_SERVER_URL}/api/users/phoneNumber`)
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             setVolunteerNumberList(response.data)
         })
         .catch(err => console.log(err))
     },[])
     
     let index = Math.floor(Math.random() * volunteerNumberList.length)
-    console.log(volunteerNumberList[index]);
+    // console.log(volunteerNumberList[index]);
 
     const handleVolunteerNumber = () => {
         setVolunteerNumber(volunteerNumberList[index])
