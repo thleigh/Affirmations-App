@@ -8,7 +8,7 @@ import NavBar from './components/NavBar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import Error from './components/Error';
+import Background from './components/Background'
 
 import FullPage from './fullpage/FullPage'
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -66,6 +66,7 @@ function App() {
       <NavBar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
+          <Route path="/background" component={Background} />
           <Route path="/signup" component={ Signup } />
           <Route 
             path="/login" 
@@ -76,6 +77,7 @@ function App() {
           <Route component={Error}/>
         </Switch>
         <Flash />
+        <Background />
       </div>
       {/* <Footer /> */}
     </div>

@@ -2,14 +2,15 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
+import NewAffirmation from './NewAffirmation';
 // import 'jquery/dist/jquery'
 // import "bootstrap/dist/js/bootstrap.js"
 // import "bootstrap/dist/css/bootstrap.js"
 
 const NavBar = (props) => {
     return (
-        <nav className="navbar navbar-expand-lg bg-white accordion">
-            <div className="container accordion">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white">
+            <div className="container">
                 <Link className="navbar-brand" to="/#Welcome" >Affirmations
                         <img src={logo} alt="ribbon" className="affirmationLogo"/>
                 </Link>
@@ -19,33 +20,30 @@ const NavBar = (props) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarsExample07">
-                    {/* <ul className="navbar-nav mr-auto"> 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link"  to="/#About">About</NavLink>
-                        </li>
-                    </ul> */}
-                    {
-                        props.isAuth 
-                        ? <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <NavLink className="nav-link"  to="/profile">Profile</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to="/" onClick={props.handleLogout} className="nav-link logout-link">Logout</NavLink>
-                            </li>
-                        </ul>
-                        : <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <NavLink className="nav-link"  to="/signup">Create Account</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link"  to="/login">Login</NavLink>
-                            </li>
-                          </ul>
-                    }
+                    <ul className="navbar-nav ml-auto">
+                        <NewAffirmation />
+                        {
+                            props.isAuth 
+                            ?
+                            <>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link text-info" to="/profile">Profile</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/" onClick={props.handleLogout} className="nav-link text-info">Logout</NavLink>
+                                </li>
+                            </>
+                            : 
+                            <>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link text-info"  to="/signup">Create Account</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link text-info"  to="/login">Login</NavLink>
+                                </li>
+                            </>
+                        }
+                    </ul>
                 </div>
             </div>
         </nav>

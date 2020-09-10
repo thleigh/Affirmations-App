@@ -25,7 +25,7 @@ const Welcome = (props) => {
 
     let affirmationList = affirmations.map((affirmation, idx) => {
         return (
-            <Affirmation key={idx} affirmation={affirmation} user={props.user} setAffirmations={setAffirmations}/>
+            <Affirmation key={idx} affirmation={affirmation} user={props.user} />
         )
     })
     
@@ -36,14 +36,19 @@ const Welcome = (props) => {
 
         let main = affirmationList[index]
         return (
+            <>
             <div className="affirmationContainer">   
                 <CSSTransitionGroup
                     transitionName="example"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>  
+                    classNames="example"
+                    transitionEnterTimeout={700}
+                    transitionLeaveTimeout={700}>  
                     {main}
                 </CSSTransitionGroup>
             </div>
+            <div className="backgroundContainer">
+            </div>
+            </>
         )
     }    
 }

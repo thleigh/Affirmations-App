@@ -17,15 +17,11 @@ const Flash = () => {
                 setVisibility(false);
             }, 4000);
         });
-                
-
     }, []);
 
     useEffect(() => {
         if(document.querySelector('.close') !== null) {
-            document.
-            querySelector('.close').
-            addEventListener('click', () => setVisibility(false));
+            document.querySelector('.close').addEventListener('click', () => setVisibility(false));
         }
     })
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import margaret2 from '../assets/margaret2.png';
 import steven2 from '../assets/steven2.png';
 import tanner2 from '../assets/tanner2.png';
@@ -28,10 +28,13 @@ const About = () => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
+            <p className="aboutParagraph">
+                Tanner is a full-stack engineer with an immeasurable passion 
+                for cultivating relationships and seeing the best in every moment. Having a background in film and 
+                graphic design, I know how to structure code and create content that is not only consumable but 
+                beautiful with the functionality to back. I am a natural leader who never objects to taking the back 
+                seat. Humility and having a growth mindset are my principle attributes. You can always count on me 
+                to bring people together to finish the task at hand.
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/thleigh" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
@@ -39,7 +42,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );
@@ -59,7 +62,7 @@ const About = () => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <p>
+            <p className="aboutParagraph">
                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                 dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
                 consectetur ac, vestibulum at eros.
@@ -70,7 +73,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );
@@ -90,7 +93,7 @@ const About = () => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            <p>
+            <p className="aboutParagraph">
                 Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
                 dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
                 consectetur ac, vestibulum at eros.
@@ -101,7 +104,7 @@ const About = () => {
             </div>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
+              <Button className="btn-info" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
           </Modal>
         );
