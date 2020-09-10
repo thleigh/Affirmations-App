@@ -4,8 +4,6 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Mapbox from './components/Mapbox'
-
 
 ReactDOM.render(
   <Router>
