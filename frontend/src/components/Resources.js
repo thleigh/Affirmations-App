@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import {Button, Modal} from 'react-bootstrap';
+import {Button, Modal, Form} from 'react-bootstrap';
 import axios from 'axios';
 import Mapbox from './Mapbox';
 
@@ -80,19 +80,19 @@ const Resources = () => {
                     Enter your city and state to find local professional help
                   </Modal.Title>
                 </Modal.Header>
+            <Form onSubmit={(e)=>handleSubmit}>
                 <Modal.Body>
                 <p className="aboutParagraph">
                     This function is still in beta form so not all results will be
                     <br />
                     the real thing.
                 </p>
-                <form  onSubmit={handleSubmit}>
-                    <input type="text" name="city" id="" placeholder="city" onChange={handleCity}/>
-                    <input type="text" name="state" id="" placeholder="state" onChange={handleState}/>
-                    <button type="submit">Submit </button>
-                </form>
+                    <input type="text" name="city" id="" placeholder="city" onInput={handleCity}/>
+                    <input type="text" name="state" id="" placeholder="state" onInput={handleState}/>
+                    <button type="submit">Submit</button>
                     <Mapbox lat={lat} lng={lng} />
                 </Modal.Body>
+            </Form>
                 <Modal.Footer>
                   <Button className="btn-info" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
