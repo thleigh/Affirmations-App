@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Affirmation from './Affirmation'
 import { CSSTransitionGroup } from 'react-transition-group'
+import Background from './Background'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Welcome = (props) => {
@@ -36,6 +37,7 @@ const Welcome = (props) => {
 
         let main = affirmationList[index]
         return (
+            <>
             <div className="affirmationContainer">   
                 <CSSTransitionGroup
                     transitionName="example"
@@ -44,6 +46,9 @@ const Welcome = (props) => {
                     {main}
                 </CSSTransitionGroup>
             </div>
+            <div className="backgroundContainer">
+            </div>
+            </>
         )
     }    
 }

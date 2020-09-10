@@ -44,7 +44,6 @@ const Resources = () => {
         setVolunteerNumber(volunteerNumberList[index])
     }
 
-
     const [modalShowNumber, setModalShowNumber] = React.useState(false);
 
         function PhoneNumber(props) {
