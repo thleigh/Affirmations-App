@@ -59,7 +59,7 @@ const Resources = () => {
     addresses = addresses.map((address, key) => {
         return <div id={key}>
             <div>
-            {address}
+            <a target="_blank" href={`http://www.google.com/search?q=${address}`}>{address}</a>
             </div>
             <br />
             </div>
