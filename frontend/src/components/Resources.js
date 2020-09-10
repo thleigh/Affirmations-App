@@ -7,7 +7,6 @@ import Mapbox from './Mapbox';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-
 const Resources = () => {
 
     let [city, setCity] = useState('');
@@ -16,8 +15,6 @@ const Resources = () => {
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
 
-   
-    
     const [volunteerNumberList, setVolunteerNumberList] = useState([]);
     const [volunteerNumber, setVolunteerNumber] = useState('')
 
