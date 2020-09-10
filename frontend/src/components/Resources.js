@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-import {Button, Modal, Form} from 'react-bootstrap';
+import {Button, Modal, Form, Col} from 'react-bootstrap';
 import axios from 'axios';
 import Mapbox from './Mapbox';
 
@@ -46,8 +46,8 @@ const Resources = () => {
         });
     }
     
-    const [modalShowNumber, setModalShowNumber] = React.useState(false);
-    const [modalShowMap, setModalShowMap] = React.useState(false);
+    const [modalShowNumber, setModalShowNumber] = useState(false);
+    const [modalShowMap, setModalShowMap] = useState(false);
 
 
     useEffect(() => {
@@ -65,40 +65,6 @@ const Resources = () => {
     const handleVolunteerNumber = () => {
         setVolunteerNumber(volunteerNumberList[index])
     }
-
-        function MapBoxModal(props) {
-            return (
-              <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-                className="numberModal"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="contained-modal-title-vcenter">
-                    Enter your city and state to find local professional help
-                  </Modal.Title>
-                </Modal.Header>
-            <Form onSubmit={(e)=>handleSubmit}>
-                <Modal.Body>
-                <p className="aboutParagraph">
-                    This function is still in beta form so not all results will be
-                    <br />
-                    the real thing.
-                </p>
-                    <input type="text" name="city" id="" placeholder="city" onInput={handleCity}/>
-                    <input type="text" name="state" id="" placeholder="state" onInput={handleState}/>
-                    <button type="submit">Submit</button>
-                    <Mapbox lat={lat} lng={lng} />
-                </Modal.Body>
-            </Form>
-                <Modal.Footer>
-                  <Button className="btn-info" onClick={props.onHide}>Close</Button>
-                </Modal.Footer>
-              </Modal>
-            );
-        };
 
         function PhoneNumber(props) {
             return (
@@ -133,47 +99,73 @@ const Resources = () => {
         };
 
 
-        return (
-            <>
-            <div>
-                <div>     
-                    <h2>Call the National Suicide Prevention Lifeline</h2>
-                    <h1>1-800-273-8255</h1>
-                    <p>"The National Suicide Prevention Lifeline is a national network of local crisis centers that provides
+    return (
+        <>
+            <div>     
+                <h2>Call the National Suicide Prevention Lifeline</h2>
+                <h1>1-800-273-8255</h1>
+                <p>"The National Suicide Prevention Lifeline is a national network of local crisis centers that provides
                         free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours
-                        a day, 7 days a week.
-                    </p>
-                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
+                        a day, 7 days a week."
+                </p>
+                <Button className="buttonModal btn-info" variant="primary" onClick={() => {
                         setModalShowNumber(true);
                         handleVolunteerNumber();
-                    }}>
-                        Number
-                    </Button>
-
-                    <PhoneNumber
-                        show={modalShowNumber}
-                        onHide={() => setModalShowNumber(false)}
-                    />
-                </div>
-                </div>
-
-                    <Button className="buttonModal btn-info" variant="primary" onClick={() => {
-                        setModalShowMap(true);
-                        }}>
-                        Find local professional help
-                    </Button>
-
-                    <MapBoxModal
-                        show={modalShowMap}
-                        onHide={() => setModalShowMap(false)}
-                    />
-
-                <div>
+                }}>
+                    Number
+                </Button>
+                
+                <PhoneNumber
+                    show={modalShowNumber}
+                    onHide={() => setModalShowNumber(false)}
+                />
             </div>
-            {/* <Mapbox lat={lat} lng={lng} /> */}
-            </>
-            
-        )
+            <div>
+                <Button className="buttonModal btn-info" variant="primary" onClick={()=>{setModalShowMap(true)}}>
+                    Find local professional help
+                </Button>
+
+                <Modal
+                show={modalShowMap}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+                className="numberModal"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title id="contained-modal-title-vcenter">
+                    Enter your city and state to find local professional help
+                  </Modal.Title>
+                </Modal.Header>
+            <Form onSubmit={(e)=>handleSubmit(e)}>
+                <Modal.Body>
+                <p className="aboutParagraph">
+                    This function is still in beta form so not all results will be
+                    <br />
+                    the real thing.
+                </p>
+                <Form.Row>
+                    <Col>
+                        <input className="form-control" type="text" name="city" id="" placeholder="city" onInput={handleCity}/>
+                    </Col>
+                    <Col>
+                        <input className="form-control" type="text" name="state" id="" placeholder="state" onInput={handleState}/>
+                    </Col>
+                    <button className="btn btn-info" type="submit">Submit</button>
+                </Form.Row>   
+                    <div>
+                        <Mapbox lat={lat} lng={lng} />
+                    </div>
+                </Modal.Body>
+            </Form>
+                <Modal.Footer>
+                  <Button className="btn-info" onClick={() => {setModalShowMap(false)}}>Close</Button>
+                </Modal.Footer>
+              </Modal>
+
+            </div>
+        </>
+    )
 }
 
 export default Resources 
