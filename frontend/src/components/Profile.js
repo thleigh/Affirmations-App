@@ -12,7 +12,7 @@ const Profile = (props) => {
         <p><strong>Volunteer: </strong>{props.user.volunteer ? "Yes" : "No"}</p>
         {props.user.volunteer ? <p><strong>Phone Number: </strong>{props.user.phoneNumber}</p> : null}
     </div>) : <h4>Loading...</h4>
-    console.log(props.user)
+    // console.log(props.user)
 
     const errorDiv = () => {
         return (
