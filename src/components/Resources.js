@@ -32,7 +32,7 @@ const Resources = () => {
         e.preventDefault(); 
         const mapData = { city, state, poi}
         // console.log('MAP', mapData)
-        axios.post(`${REACT_APP_SERVER_URL}/api/resources`, mapData )
+        axios.post(`${REACT_APP_SERVER_URL}/api/info`, mapData )
         .then(response => {
             // setLng(response.data.match.center[0]);
             // console.log(response.data.match.center[0])
