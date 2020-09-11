@@ -7,7 +7,7 @@ Affirmations strives to be a safe place for all and keeps the mental and physica
 During these challenging times, it's more important than ever to break stigmas and talk about mental health. We encourage 
 everyone to take care of themselves, look out for others, and have open and honest conversations about our thoughts and feelings.
 
-Site: 
+Site: [Affirmations](https://affirmations-client.herokuapp.com)
 
 Back-end Repo: [Back-end](https://github.com/thleigh/Affirmations-Backend)
 
