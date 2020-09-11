@@ -6,13 +6,10 @@ import github from '../assets/githublogo.png';
 import linkedin from '../assets/linkedinlogo.png';
 import {Button, Modal} from 'react-bootstrap'
 
-
-
 const About = () => {
     const [modalShowTanner, setModalShowTanner] = React.useState(false);
     const [modalShowMargaret, setModalShowMargaret] = React.useState(false);
     const [modalShowSteven, setModalShowSteven] = React.useState(false);
-
 
     function TannerModal(props) {
         return (

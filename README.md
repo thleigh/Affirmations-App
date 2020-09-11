@@ -136,23 +136,24 @@ more of our time. It helped us organize sprints and effectively and satisfyingly
 ```
 App
 |--NavBar
+|   |--NewAffirmation
 |
-|---Signup
+|--Signup
 |
-|---Login
+|--Login
 |
-|---Profile(Private)
-|   |--MoodTeacker 📍
+|--Profile(Private)
 |
-|---FullPage
+|--FullPage
 |   |--Welcome
-|   |   |--Comment 📍
-|   |   |--QuoteCategory 📍
-|   |--Resources 📍
-|   |   |--MapBox 📍
-|   |--About 🖍
+|   |   |--Affirmation
+|   |--Resources
+|   |   |--MapBox
+|   |--About
 |
-|--Footer
+|--Background
+|
+|--Flash
 ```
 
 # Conclusion

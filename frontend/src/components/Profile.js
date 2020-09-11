@@ -7,7 +7,6 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Profile = (props) => {
 
     let [affirmations, setAffirmations] = useState([]);
-    let [likedQuotes, setLikedQuotes] = useState('')
 
     window.flash(`Welcome back, ${props.user.name}` , 'success')
 
