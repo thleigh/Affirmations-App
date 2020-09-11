@@ -155,9 +155,7 @@ const Resources = () => {
             <Form onSubmit={(e)=>handleSubmit(e)}>
                 <Modal.Body>
                 <p className="aboutParagraph">
-                    This function is still in beta form so not all results will be
-                    <br />
-                    the real thing.
+                   
                 </p>
                 <Form.Row>
                     <Col>

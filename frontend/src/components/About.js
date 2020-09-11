@@ -94,7 +94,7 @@ const About = () => {
             Steven is a full stack software developer, that creates easier user experience for everyone 
             involved and can add value in whatever role He is put in. Positive Change for the 
             future keeps him motivated to continue developing high performing technology and 
-            adds value to the level of efficiency his work creates. He fosters 2 cats.
+            adds value to the level of efficiency his work creates.
             </p>
             <div className="logoLinks">
                 <a href="https://github.com/Michaudsr" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/></a>
