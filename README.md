@@ -155,6 +155,10 @@ App
 |
 |--Flash
 ```
+## For the Future
+Here are some things that we wish we could have included but did not have enough time/knowledge to do.
+* A proper terms of use form for people that want to sign up as a volunteer. 
+* The ability to stop people from submitting bad/repeating quotes.
 
 # Conclusion
 Affirmations was started on September 4th, 2020 and was completed on September 11th, 2020. Approximately 50% of this site was created through pair programming. Each member played an essential role in the creation of this site and we are very proud of the outcome. Please contact us if you would like to know more about our project and/or if you have any job openings for us 🥰.
