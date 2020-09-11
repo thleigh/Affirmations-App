@@ -13,7 +13,6 @@ const Resources = () => {
     let [poi, setPoi] = useState('mental health clinic');
     let [lat, setLat] = useState('');
     let [lng, setLng] = useState('');
-    // let [address, setAddress] = useState('find resources near you');
     let [addresses, setAddresses] = useState([]);
 
     

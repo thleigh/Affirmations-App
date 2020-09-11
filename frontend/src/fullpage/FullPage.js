@@ -10,7 +10,6 @@ const SECTION_SEL = `.${SEL}`;
 
 class FullPage extends React.Component {
   constructor(props) {
-    // console.log(props);
     super();
     this.state = {
       fullpages: [

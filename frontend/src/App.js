@@ -9,9 +9,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import Background from './components/Background'
-
 import FullPage from './fullpage/FullPage'
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 window.flash = (message, type="success") => Bus.emit('flash', ({message, type}))
@@ -58,9 +56,6 @@ function App() {
     }
   }
 
-  // console.log('Current User', currentUser);
-  // console.log('Authenicated', isAuthenticated);
-
   return (
     <div>
       <NavBar handleLogout={handleLogout} isAuth={isAuthenticated} />
@@ -79,7 +74,6 @@ function App() {
         <Flash />
         <Background />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }

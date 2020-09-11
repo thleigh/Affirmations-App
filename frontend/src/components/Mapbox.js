@@ -1,12 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-// import ReactDOM, { render } from 'react-dom';
 import mapboxgl from 'mapbox-gl';
-
 
 const REACT_APP_MAP_TOKEN = process.env.REACT_APP_MAP_TOKEN
 mapboxgl.accessToken = REACT_APP_MAP_TOKEN
-// let match = response.body.features[0]
-
 
 const Mapbox = ({lat, lng}) => {
   let mapContainer = useRef(null);
@@ -31,6 +27,5 @@ const Mapbox = ({lat, lng}) => {
   )         
 
 }
-
 
 export default Mapbox;

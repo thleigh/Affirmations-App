@@ -8,11 +8,6 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Login = (props) => {
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
-    // let [username, setUsername] = useState('');
-
-    // let handleUsername = (e) => {
-    //     setUsername(e.target.value)
-    // }
 
     let handleEmail = (e) => {
         setEmail(e.target.value);

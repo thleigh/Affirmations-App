@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-// import { ErrorMessage } from '@hookform/error-message';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
@@ -15,7 +14,6 @@ const Signup = () => {
     let [redirect, setRedirect] = useState(false);
     let [volunteer, setVolunteer] = useState(false);
     let [phoneNumber, setPhoneNumber] = useState('');
-    // let { register, errors, handleSubmit } = useForm();
 
     const handleName = (e) => {
         setUsername(e.target.value);
@@ -52,7 +50,6 @@ const Signup = () => {
             
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
-                // console.log(response);
                 window.flash('User has been created successfully!', 'success')
                 setRedirect(true);
             })
